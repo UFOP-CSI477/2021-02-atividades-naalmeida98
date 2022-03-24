@@ -2,11 +2,11 @@
 
 ## Atualize os seus dados
 
-- Nome:
-- Matrícula:
-- Curso:
-- Semestre/Ano correntes:
-- Link para o seu GitHub:
+- Nome: Natália Pereira de Almeida
+- Matrícula: 19.1.8007
+- Curso: Sistemas de Informação
+- Semestre/Ano correntes: 21.2
+- Link para o seu GitHub: [naalmeida98](https://github.com/naalmeida98)
 
 ## [Projeto final:](./Projeto/README.md)
 
