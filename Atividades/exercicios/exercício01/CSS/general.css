@@ -1,0 +1,38 @@
+.buttons {
+    width: 20%;
+    height: 60px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin: 15px;
+    border: 2px;
+    border-color: white;
+}
+
+.title {
+    color: white;
+    margin: 10px;
+}
+
+.personalData {
+    color: white;
+    margin: 20px;
+}
+
+.baseboard {
+    color: white;
+    margin: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+.link {
+    color: white;
+}
+
+.main {
+    background-color: black;
+}
