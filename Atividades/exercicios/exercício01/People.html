@@ -16,38 +16,96 @@
             <h1 class="title">People</h1>
         </header>
 
+        <form action="/teste" name="form" method="get">
+            <div>
+                <label class="textInput" for="peopleName">Name </label>
+                <input required type="text" name="name" id="peopleName" placeholder="Report the name">
+            </div>
+            <div>
+                <label class="textInput" for="peopleEmail">E-mail</label>
+                <input required type="text" name="email" id="peopleEmail" placeholder="Report the email">
+            </div>
+            <div>
+                <label class="textInput" for="peopleEmail">CPF</label>
+                <input required type="text" name="cpf" id="peopleCpf" placeholder="Report the CPF">
+            </div>
+            <div>
+                <label class="textInput" for="peopleTelephone">Phone Number</label>
+                <input required type="text" name="phoneNumber" id="peoplePhone" placeholder="Report the Phone Number">
+            </div>
+            <div>
+                <label class="textInput" for="peopleAddress">Address</label>
+                <input required type="text" name="address" id="peopleAddress" placeholder="Report the address">
+            </div>
 
-        < <!-- <div>
-            <span class="buttons">
-                <a href="/ShopSystem/Home.html" class="link">Home</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/Products.html" class="link">Produtcs</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/Shopping.html" class="link">Shopping</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/States.html" class="link">States</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/Cities.html" class="link">Cities</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/Profile.html" class="link">Profile</a>
-            </span>
-            <span class="buttons">
-                <a href="/ShopSystem/Logout.html" class="link">Logout</a>
-            </span> -->
+            <!-- <div>
+                <label for="peopleGenero">Gênero</label>
+                <div>
+                    <input type="radio" value="F" id="feminino" name="genero">
+                    <label class="textInput" for="feminino">Feminino</label>
+                </div>
+
+            </div> -->
+
+            <div>
+                <label for="peoplePreference">Preference</label>
+                <div>
+                    <input type="checkbox" value="R" id="clothes" name="preference[0]">
+                    <label class="textInput" for="clothes">Clothes</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" value="S" id="shoes" name="preference[1]">
+                    <label class="textInput" for="shoes">Shoes</label>
+                </div>
+            </div>
+
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear">
+        </form>
+
+    </div>
+
+    <div>
+
+        <table class="textTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>CPF</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Natália Almeida</td>
+                    <td>natalia.pa@gmail.com</td>
+                    <td>115.115.114-99</td>
+                </tr>
+                <tr>
+                    <td>Isabela Almeida</td>
+                    <td>isabela.pa@gmail.com</td>
+                    <td>111.115.114-99</td>
+                </tr>
+                <tr>
+                    <td>Gabriele Almeida</td>
+                    <td>gabriele.pa@gmail.com</td>
+                    <td>115.222.114-99</td>
+                </tr>
+            </tbody>
+            < </table>
     </div>
 
     <br>
-    <div class="clear">
-        <footer class="baseboard">Development System by Natália Almeida</footer>
+    <div class=" clear ">
+        <footer class="baseboard ">Development System by Natália Almeida</footer>
     </div>
     </div>
 
 </body>
+
+</html>
 
 </html>
 
