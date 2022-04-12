@@ -41,8 +41,7 @@ a::before {
 }
 
 .img {
-    margin-right: 130px;
-    margin-top: 20px;
+    text-align: center;
 }
 
 .buttonsDiv {
