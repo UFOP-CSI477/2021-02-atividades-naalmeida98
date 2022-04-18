@@ -5,8 +5,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Atividades/exercicios/exercício03/CSS/general.css">
+    <link rel="stylesheet" href="/Atividades/exercicios/exercício04/CSS/general.css">
     <title>People</title>
+
+    <script>
+        function Pessoa(_name, _email, _cpf, _phone, _address) {
+            this.name = _name;
+            this.email = _email;
+            this.cpf = _cpf;
+            this.phone = _phone;
+            this.address = _address;
+        }
+
+        function loadDates() {
+            const name = document.getElementById("peopleName").value;
+            const email = document.getElementById("peopleEmail").value;
+            const cpf = document.getElementById("peopleCpf").value;
+            const phone = document.getElementById("peoplePhone").value;
+            const address = document.getElementById("peopleAddress").value;
+
+            const pessoa = new Pessoa(name, email, cpf, phone, address);
+            console.log(pessoa);
+        }
+    </script>
 </head>
 
 <body class="main">
@@ -16,7 +37,7 @@
             <h1 class="title">People</h1>
         </header>
 
-        <form action="/teste" name="form" method="get">
+        <form action="" name="form" method="get">
             <div>
                 <label class="textInput" for="peopleName">Name </label>
                 <input required type="text" name="name" id="peopleName" placeholder="Report the name">
@@ -38,15 +59,6 @@
                 <input required type="text" name="address" id="peopleAddress" placeholder="Report the address">
             </div>
 
-            <!-- <div>
-                <label for="peopleGenero">Gênero</label>
-                <div>
-                    <input type="radio" value="F" id="feminino" name="genero">
-                    <label class="textInput" for="feminino">Feminino</label>
-                </div>
-
-            </div> -->
-
             <div>
                 <label for="peoplePreference">Preference</label>
                 <div>
@@ -60,7 +72,7 @@
                 </div>
             </div>
 
-            <input type="submit" value="Register">
+            <input type="submit" value="Register" onclick="loadDates()">
             <input type="reset" value="Clear">
         </form>
 
