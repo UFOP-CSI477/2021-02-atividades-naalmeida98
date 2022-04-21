@@ -28,7 +28,7 @@
 
   Esta seção tem por objetivo definir os requisitos não funcionais e funcionais do sistema em questão.
 
- # 2.1 Requisitos não funcionais (RNF)
+ #### 2.1 Requisitos não funcionais (RNF)
 
     RNF001: O sistema deve trabalhar no ambiente web;
 
@@ -42,7 +42,7 @@
     
     RNF006: O sistema deve ser responsivo.
 
-  # 2.2 Requisitos funcionais (RF)
+ #### 2.2 Requisitos funcionais (RF)
     
     RF001: O sistema deve cadastrar e editar as informações de um cliente (usuário);
     
@@ -70,27 +70,27 @@
 <!-- Construir alguns protótipos para a aplicação, disponibilizá-los no Github e descrever o que foi considerado. //-->
 ### 4. Protótipo
 
-  # 4.1 Main
+  #### 4.1 Main
 
 
   ![Screenshot](Main.png)
 
-  # 4.2 Menu principal e carrinho de compras 
+  #### 4.2 Menu principal e carrinho de compras 
 
 
   ![Screenshot](MenuLeft.png)
 
-  # 4.3 Home
+  #### 4.3 Home
 
 
   ![Screenshot](Home.png)
 
-  # 4.4 Produtos por categorias
+  #### 4.4 Produtos por categorias
 
 
   ![Screenshot](Products.png)
 
-  # 4.5 Especificação do produto
+  #### 4.5 Especificação do produto
 
 
   ![Screenshot](Product.png)
