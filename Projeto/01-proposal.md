@@ -13,9 +13,15 @@
 <!-- Apresentar o tema. -->
 ### 1. Tema
 
-  A pandemia do COVID-19, iniciada em 2020, ocasionou em um boom dos e-commerces em virtude da necessidade que o mercado teve de se transitar do presencial para o on-line. Portanto, desde então, esse tipo de negócio tem sido supervalorizado, e cada vez mais novos horizontes são expandidos. 
+  A pandemia do COVID-19, iniciada em 2020, ocasionou em um boom dos e-commerces em virtude da
+  necessidade que o mercado teve de se transitar do presencial para o on-line. Portanto, desde
+  então, esse tipo de negócio tem sido supervalorizado, e cada vez mais novos horizontes são
+  expandidos. 
 
-	Atualmente, sou empreendedora no ramo da joalheria, e todas as minhas vendas são realizadas via Whatsapp e Instagram. Tendo em vista o cenário descrito anteriormente, e também em minha experiência, o tema escolhido para ser desenvolvido neste trabalho consistirá na união dessas duas vertentes: “E-commerce de semijoias: uma aplicação Web de vendas”.
+	Atualmente, sou empreendedora no ramo da joalheria, e todas as minhas vendas são realizadas via
+  Whatsapp e Instagram. Tendo em vista o cenário descrito anteriormente, e também em minha
+  experiência, o tema escolhido para ser desenvolvido neste trabalho consistirá na união dessas
+  duas vertentes: “E-commerce de semijoias: uma aplicação Web de vendas”.
 
 
 <!-- Descrever e limitar o escopo da aplicação. -->
@@ -52,7 +58,11 @@
 ### 4. Protótipo
 
   4.1 Main
+
+
   ![Screenshot](Main.png)
+
+
   Figura 1 - Tela main do projeto
 
 ### 5. Referências
