@@ -30,18 +30,29 @@
   Esta seção tem por objetivo definir os requisitos não funcionais e funcionais do sistema em questão.
 
   2.1 Requisitos não funcionais (RNF)
+
     RNF001: O sistema deve trabalhar no ambiente web;
+
     RNF002: O sistema deve utilizar um banco de dados, a ser definido posteriormente;
+    
     RNF003: O sistema deve possuir  um controle de acesso para o usuário;
+    
     RNF004: O sistema deve ser adaptável aos navegadores;
+    
     RNF005: O sistema deve seguir o protocolo HTTP;
+    
     RNF006: O sistema deve ser responsivo.
 
   2.2 Requisitos funcionais (RF)
+    
     RF001: O sistema deve cadastrar e editar as informações de um cliente (usuário);
+    
     RF002: O sistema deve permitir ao usuário pesquisar por produtos;
+    
     RF003: O sistema deve permitir ao usuário adicionar e remover produtos do carrinho de compras;
+    
     RF004: O sistema deve exibir o valor total da compra e as formas de pagamento;
+    
     RF005: O sistema deve exibir os produtos por categoria.
 
 
@@ -49,8 +60,11 @@
 ### 3. Restrições
 
   Este sistema se apresentará como um Produto Mínimo Viável (MVP) de um e-commerce, dessa forma, funcionalidades mais complexas não farão parte do seu escopo, tais como:
+
       * Pagamentos via cartão de crédito;
+
       * Cálculos para frete;
+
       * Geração de nota-fiscal;
 
 
@@ -61,8 +75,6 @@
 
 
   ![Screenshot](Main.png)
-
-  Figura 1 - Tela main do projeto
 
   4.2 Menu principal e carrinho de compras 
 
