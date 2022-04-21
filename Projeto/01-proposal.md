@@ -62,9 +62,27 @@
 
   ![Screenshot](Main.png)
 
-
   Figura 1 - Tela main do projeto
 
+  4.2 Menu principal e carrinho de compras 
+
+
+  ![Screenshot](MenuLeft.png)
+
+  4.3 Home
+
+
+  ![Screenshot](Home.png)
+
+  4.4 Produtos por categorias
+
+
+  ![Screenshot](Products.png)
+
+  4.5 Especificação do produto
+
+
+  ![Screenshot](Product.png)
 ### 5. Referências
 
   Referências podem ser incluídas, caso necessário. Utilize o padrão ABNT.
