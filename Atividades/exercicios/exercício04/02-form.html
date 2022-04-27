@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Atividades/exercicios/exercício04/CSS/general.css">
+    <title>01-prompt</title>
+
+    <script>
+        var pessoa;
+
+        function Pessoa(_name, _email, _cpf, _phone, _address) {
+            this.name = _name;
+            this.email = _email;
+            this.cpf = _cpf;
+            this.phone = _phone;
+            this.address = _address;
+        }
+
+        function loadDates() {
+            const name = window.prompt("Insira o nome");
+            const email = window.prompt("Insira o email");
+            const cpf = window.prompt("Insira o cpf");
+            const phone = window.prompt("Insira o número do telefone");
+            const address = window.prompt("Insira o endereço");
+
+            pessoa = new Pessoa(name, email, cpf, phone, address);
+            console.log(pessoa);
+        }
+
+        function writeDates() {
+            document.getElementById("nameTable").innerHTML = pessoa.name;
+            document.getElementById("emailTable").innerHTML = pessoa.email;
+            document.getElementById("cpfTable").innerHTML = pessoa.cpf;
+            document.getElementById("phoneTable").innerHTML = pessoa.phone;
+            document.getElementById("addressTable").innerHTML = pessoa.address;
+        }
+    </script>
+</head>
+
+<body>
+
+    //CRIAR FORM COM INPUTS
+
+    <div>
+        <input class="buttons" type="button" value="Inserir dados" onclick="loadDates()">
+        <br>
+        <input class="buttons" type="button" value="Imprimir dados" onclick="writeDates()">
+        <br>
+        <div>
+            <table style="border-color: #e594d7; ">
+                <thead>
+                    <tr style="color:#e594d7">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Celular</th>
+                        <th>Endereço</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td id="nameTable">-</td>
+                        <td id="emailTable">-</td>
+                        <td id="cpfTable">-</td>
+                        <td id="phoneTable">-</td>
+                        <td id="addressTable">-</td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</body>
+
+</html>

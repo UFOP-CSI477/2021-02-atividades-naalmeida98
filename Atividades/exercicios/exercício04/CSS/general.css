@@ -57,7 +57,7 @@ a::before {
     color: black;
 }
 
-.textTable {
+table {
     color: black;
     border: 10px;
     border-color: #e594d7;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-prompt</title>
+
+    <script>
+        var pessoa;
+
+        function Pessoa(_name, _email, _cpf, _phone, _address) {
+            this.name = _name;
+            this.email = _email;
+            this.cpf = _cpf;
+            this.phone = _phone;
+            this.address = _address;
+        }
+
+        function loadDates() {
+            const name = window.prompt("Insira o nome");
+            const email = window.prompt("Insira o email");
+            const cpf = window.prompt("Insira o cpf");
+            const phone = window.prompt("Insira o número do telefone");
+            const address = window.prompt("Insira o endereço");
+
+            pessoa = new Pessoa(name, email, cpf, phone, address);
+            console.log(pessoa);
+        }
+
+        loadDates();
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
