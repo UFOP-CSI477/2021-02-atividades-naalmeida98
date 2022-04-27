@@ -1,0 +1,125 @@
+.buttons {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+    width: 250px;
+    background-color: #e594d7;
+    color: white;
+    text-align: center;
+    border: 2px;
+    padding: 10px;
+    border-color: white;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    width: 250px;
+    background-color: #e594d7;
+    color: white;
+    text-align: center;
+    border: 2px;
+    padding: 10px;
+    border-color: white;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+a::before {
+    content: "";
+}
+
+.title {
+    color: black;
+    margin: 10px;
+}
+
+.img {
+    text-align: center;
+}
+
+.buttonsDiv {
+    text-align: center;
+}
+
+.personalData {
+    color: black;
+    margin: 20px;
+}
+
+.textInput {
+    color: black;
+}
+
+.textTable {
+    color: black;
+    border: 10px;
+    border-color: #e594d7;
+}
+
+.headerDiv {
+    background-color: #e594d7;
+    color: white;
+    height: 100px;
+}
+
+input[type="text"] {
+    background-color: #e594d7;
+    color: black;
+    border-radius: 5px;
+    border-color: #e594d7;
+    width: 100%;
+    height: 25px;
+}
+
+form div {
+    padding: 5px;
+    border: 2px solid #e594d7;
+}
+
+.titleHome {
+    padding: 30px;
+}
+
+.menuLeft {
+    height: 700px;
+    width: 350px;
+    background-color: #e594d7;
+    float: left;
+}
+
+.frame {
+    float: right;
+    width: 800px;
+}
+
+.baseboard {
+    color: black;
+    margin: 10px;
+    padding: 30px;
+    text-align: right;
+}
+
+.clear {
+    clear: both;
+}
+
+.link {
+    color: white;
+}
+
+.main {
+    background-color: white;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+    flex-flow: column wrap;
+}
