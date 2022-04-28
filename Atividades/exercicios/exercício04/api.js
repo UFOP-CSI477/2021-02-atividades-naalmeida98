@@ -26,12 +26,14 @@ function select(data, campo) {
 
 }
 
-function loadStates() {
+function loadPais() {
+    fetch('https://servicodados.ibge.gov.br/api/v1/localidades/paises')
+        .then(response => response.json())
+        .then(data => select(data, "paises"))
+        .catch(error => console.error(error));
+}
 
-    // fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/')
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.error(error));
+function loadStates() {
 
     fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
         .then(response => response.json())
@@ -40,11 +42,6 @@ function loadStates() {
 }
 
 function loadCities() {
-
-    // fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados/')
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    //     .catch(error => console.error(error));
 
     const estados = document.getElementById("estados");
     const index = estados.selectedIndex;
@@ -60,6 +57,7 @@ function loadCities() {
 
     fetch(url)
         .then(response => response.json())
+        .catch(error => console.error(error))
         .then(data => select(data, "cidades"))
         .catch(error => console.error(error));
 }

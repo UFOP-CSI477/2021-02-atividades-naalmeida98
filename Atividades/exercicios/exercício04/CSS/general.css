@@ -11,7 +11,8 @@
     border-color: white;
 }
 
-input[type="submit"],
+input[type="button"],
+[type="submit"],
 input[type="reset"] {
     width: 250px;
     background-color: #e594d7;

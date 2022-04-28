@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Atividades/exercicios/exercício04/CSS/general.css">
-    <title>02-form</title>
+    <title>04-validacao-form</title>
 
     <script>
         var pessoa;
@@ -26,8 +26,13 @@
             const phone = document.getElementById("peoplePhone").value;
             const address = document.getElementById("peopleAddress").value;
 
-            pessoa = new Pessoa(name, email, cpf, phone, address);
-            console.log(pessoa);
+            if (name == "" || email == "" || cpf == "" || phone == "" || address == "") {
+                window.alert("Preencha todos os campos");
+            } else {
+                pessoa = new Pessoa(name, email, cpf, phone, address);
+                console.log(pessoa);
+            }
+
         }
 
         function writeDates() {
