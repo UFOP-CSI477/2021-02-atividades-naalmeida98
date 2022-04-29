@@ -5,102 +5,200 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/Atividades/exercicios/exercício03/CSS/general.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>People</title>
 </head>
 
 <body class="main">
 
-    <div>
+    <div class="text-3xl font-mono text-left text-white bg-pink-400 p-10">
         <header>
-            <h1 class="title">People</h1>
+            <h1 class="mx-10">PEOPLE</h1>
         </header>
+    </div>
 
-        <form action="/teste" name="form" method="get">
-            <div>
-                <label class="textInput" for="peopleName">Name </label>
-                <input required type="text" name="name" id="peopleName" placeholder="Report the name">
-            </div>
-            <div>
-                <label class="textInput" for="peopleEmail">E-mail</label>
-                <input required type="text" name="email" id="peopleEmail" placeholder="Report the email">
-            </div>
-            <div>
-                <label class="textInput" for="peopleEmail">CPF</label>
-                <input required type="text" name="cpf" id="peopleCpf" placeholder="Report the CPF">
-            </div>
-            <div>
-                <label class="textInput" for="peopleTelephone">Phone Number</label>
-                <input required type="text" name="phoneNumber" id="peoplePhone" placeholder="Report the Phone Number">
-            </div>
-            <div>
-                <label class="textInput" for="peopleAddress">Address</label>
-                <input required type="text" name="address" id="peopleAddress" placeholder="Report the address">
-            </div>
-
-            <!-- <div>
-                <label for="peopleGenero">Gênero</label>
-                <div>
-                    <input type="radio" value="F" id="feminino" name="genero">
-                    <label class="textInput" for="feminino">Feminino</label>
+    <div class="block p-6 rounded-lg shadow-lg bg-white max-w-md">
+        <form>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="form-group mb-6">
+                    <input type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput123" aria-describedby="emailHelp123" placeholder="Name">
                 </div>
-
-            </div> -->
-
-            <div>
-                <label for="peoplePreference">Preference</label>
-                <div>
-                    <input type="checkbox" value="R" id="clothes" name="preference[0]">
-                    <label class="textInput" for="clothes">Clothes</label>
-                </div>
-
-                <div>
-                    <input type="checkbox" value="S" id="shoes" name="preference[1]">
-                    <label class="textInput" for="shoes">Shoes</label>
+                <div class="form-group mb-6">
+                    <input type="text" class="form-control
+                block
+                w-full
+                px-3
+                py-1.5
+                text-base
+                font-normal
+                text-gray-700
+                bg-white bg-clip-padding
+                border border-solid border-gray-300
+                rounded
+                transition
+                ease-in-out
+                m-0
+                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput124" aria-describedby="emailHelp124" placeholder="CPF">
                 </div>
             </div>
+            <div class="form-group mb-6">
+                <input type="email" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput125" placeholder="Email address">
+            </div>
+            <div class="form-group mb-6">
+                <input type="password" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126" placeholder="Phone Number">
+            </div>
+            <div class="form-group mb-6">
+                <input type="password" class="form-control block
+              w-full
+              px-3
+              py-1.5
+              text-base
+              font-normal
+              text-gray-700
+              bg-white bg-clip-padding
+              border border-solid border-gray-300
+              rounded
+              transition
+              ease-in-out
+              m-0
+              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput126" placeholder="Address">
+            </div>
 
-            <input type="submit" value="Register">
-            <input type="reset" value="Clear">
+            <button type="submit" class="
+            w-full
+            px-6
+            py-2.5
+            bg-pink-600
+            text-white
+            font-medium
+            text-xs
+            leading-tight
+            uppercase
+            rounded
+            shadow-md
+            hover:bg-pink-700 hover:shadow-lg
+            focus:bg-pink-700 focus:shadow-lg focus:outline-none focus:ring-0
+            active:bg-pink-800 active:shadow-lg
+            transition
+            duration-150
+            ease-in-out">Registrar</button>
         </form>
+    </div>
 
+    </div>
+
+    <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+                <div class="overflow-hidden">
+                    <table class="min-w-full">
+                        <thead class="bg-white border-b">
+                            <tr>
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    #
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    Name
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    Email
+                                </th>
+                                <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    CPF
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-100 border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">1</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Natália Pereira de Almeida
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    nati@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    123456789
+                                </td>
+                            </tr>
+                            <tr class="bg-white border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Isabela Pereira de Almeida
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    isa@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    111222333
+                                </td>
+                            </tr>
+                            <tr class="bg-gray-100 border-b">
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    Gabriele Pereira de Almeida
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    gabi@gmail.com
+                                </td>
+                                <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                                    4445555666
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div>
 
-        <table class="textTable">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>CPF</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Natália Almeida</td>
-                    <td>natalia.pa@gmail.com</td>
-                    <td>115.115.114-99</td>
-                </tr>
-                <tr>
-                    <td>Isabela Almeida</td>
-                    <td>isabela.pa@gmail.com</td>
-                    <td>111.115.114-99</td>
-                </tr>
-                <tr>
-                    <td>Gabriele Almeida</td>
-                    <td>gabriele.pa@gmail.com</td>
-                    <td>115.222.114-99</td>
-                </tr>
-            </tbody>
-            < </table>
-    </div>
-
-    <br>
-    <div class=" clear ">
-        <footer class="baseboard ">Development System by Natália Almeida</footer>
-    </div>
+        <br>
+        <div class=" clear ">
+            <footer class="baseboard ">Development System by Natália Almeida</footer>
+        </div>
     </div>
 
 </body>
