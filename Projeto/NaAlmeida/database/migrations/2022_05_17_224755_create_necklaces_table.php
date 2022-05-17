@@ -16,6 +16,14 @@ return new class extends Migration
         Schema::create('necklaces', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('name',25);
+            $table->string('code',12);
+            $table->float('value',2,2);
+            $table->string('description',100);
+            $table->integer('size');
+            // $table->string('type',15);
+            // $table->string('category',30);
+            // $table->integer('qtdStock');
         });
     }
 
