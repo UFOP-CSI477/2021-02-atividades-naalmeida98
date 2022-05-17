@@ -69,12 +69,10 @@
     <nav class="navbar navbar-dark " style="background-color:#FA6699;" aria-label="Dark offcanvas navbar">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
-                <!-- <span class="navbar-toggler-icon"></span> -->
                 <i class="bi bi-list"></i>
             </button>
             <a style="font-size:1.4rem;" class="navbar-brand" href="#">NA ALMEIDA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
-                <!-- <span class="navbar-toggler-icon"></span> -->
                 <i class="bi bi-bag-heart-fill"></i>
             </button>
             <div class="offcanvas offcanvas-start text-white" style="background-color: #FA6699;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
@@ -83,8 +81,8 @@
                     <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">MENU</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+                <hr>
                 <div class="offcanvas-body">
-                    <!-- INSERIR BOTÕES DO MENU -->
                     <button type="button" class="btn text-white btn-lg btn-block w-100">ANÉIS</button>
                     <button type="button" class="btn text-white btn-lg btn-block w-100">BRINCOS</button>
                     <button type="button" class="btn text-white btn-lg btn-block w-100">CORDÕES</button>
