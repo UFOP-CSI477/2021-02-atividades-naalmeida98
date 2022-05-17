@@ -1,3 +1,24 @@
+/*FONTES PRINCIAPAIS DO PROJETO */
+
+a {
+    font-family: 'Playfair Display SC', serif;
+}
+
+p,
+h1,
+h2,
+h3,
+label {
+    font-family: 'Montserrat', sans-serif;
+}
+
+i {
+    font-size: 1.3em;
+    color: white
+}
+
+img {}
+
 .container {
     max-width: 960px;
 }
@@ -107,7 +128,7 @@ ody {
 /* Declare heights because of positioning of img element */
 
 .carousel-item {
-    height: 40rem;
+    height: 30rem;
 }
 
 
