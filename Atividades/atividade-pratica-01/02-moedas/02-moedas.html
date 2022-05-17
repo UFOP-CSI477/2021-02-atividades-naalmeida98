@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>Currency Converter</title>
+
+</head>
+
+<body onLoad="loadCoin()">
+    <div class="h-full w-full absolute">
+        <!-- Navigation starts -->
+        <!-- Mobile -->
+        <div id="mobile-nav" class="w-full xl:hidden h-full absolute z-40">
+            <div class="bg-teal-600 opacity-50 inset-0 fixed w-full h-full" onclick="sidebarHandler(false)"></div>
+        </div>
+        <!-- Navigation ends -->
+        <!-- Page title starts -->
+        <div class="my-6 lg:my-12 container px-6 mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between pb-4 border-b border-gray-300">
+            <div>
+                <h4 class="text-2xl font-bold leading-tight text-gray-800">CURRENCY CONVERTER</h4>
+            </div>
+        </div>
+        <!-- Page title ends -->
+        <div class="container mx-auto px-6">
+            <!-- Remove class [ h-64 ] when adding a card block -->
+            <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
+            <div class="w-full h-64 ">
+                <form class="w-full ">
+                    <div class="flex flex-wrap-mx-3 mb-6 ">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <div class="relative">
+                                <select required id="fromCoin" class="block appearance-none w-full bg-teal-50 border border-teal-600 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                    <option>Select the option</option>
+                                    <option>BRL</option>
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <div class="relative">
+                                <select required id="toCoin" class="block appearance-none w-full bg-teal-50 border border-teal-600 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                                    <option>Select the option</option>                  
+                                    <option>BRL</option> 
+                                </select>
+                                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                                    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap-mx-3 mb-6 ">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                                Value ($)
+                            </label>
+                            <input required class="appearance-none block w-full bg-teal-50 text-gray-700 border border-teal-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="value" type="text" placeholder="99,99">
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                                Quotation Date
+                            </label>
+                            <input required class="appearance-none block w-full bg-teal-50 text-gray-700 border border-teal-600 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="date" type="text" placeholder="mm-dd-yyyy">
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap-mx-3 mb-6 content-center">
+                        <button type="submit" onclick="loadConverter()" class="md:w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
+                        Converter
+                    </button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- POP UP OF RESULT -->
+    <div class="relative z-10" id="popupConverter" style="visibility:collapse;" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div class="fixed inset-0 bg-teal-900 bg-opacity-75 transition-opacity"></div>
+        <div class="fixed z-10 inset-0 overflow-y-auto">
+            <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+                <!-- This element is to trick the browser into centering the modal contents. -->
+                <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+                <div class="relative inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+                    <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div class="sm:items-start w-full">
+                            <dh-component>
+                                <div class="rounded mt-5 dark:border-teal-700 h-full w-full">
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">CONVERTION RESULT</h3>
+                                </div>
+                                <div class="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 pt-6 gap-5">
+                                    <div class="rounded border-teal-700 dark:border-teal-700 bg-teal-700 border-2 h-full">
+                                        <div class="sm:flex sm:items-start p-3">
+                                            <!-- <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-teal-50 sm:mx-0 sm:h-5 sm:w-5">
+                                                <img src="https://img.icons8.com/ios/50/000000/us-dollar-circled--v4.png" /></div> -->
+                                            <div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                                <h3 class="text-lg leading-6 font-medium text-white" id="valueToCoin">$ 1000,00</h3>
+                                                <div class="mt-2 mb-2">
+                                                    <p class="text-white text-sm" id="nameToCoin">DÓLAR</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="rounded border-teal-700 dark:border-teal-700 bg-teal-700 border-2 h-full">
+                                        <div class="sm:flex sm:items-start p-3">
+                                            <!-- <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-teal-50 sm:mx-0 sm:h-5 sm:w-5">
+                                                <img src="https://img.icons8.com/ios/50/000000/us-dollar-circled--v4.png" /></div> -->
+                                            <div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                                <h3 class="text-lg leading-6 font-medium text-white" id="valueFromCoin">$ 100,00</h3>
+                                                <div class="mt-2 mb-2">
+                                                    <p class="text-white text-sm" id="nameFromCoin">EURO</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="rounded border-teal-700 mt-5 dark:border-teal-700 border-2 h-full w-full">
+                                    <div class="sm:flex sm:items-start p-3">
+                                        <div class="mt-4 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                            <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">02/05/2022</h3>
+                                            <!-- <div class="sm:flex mt-2 mb-2">
+                                                <p id="send" class="text-gray-600 text-sm">EURO</p>
+                                            </div> -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </dh-component>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                        <button type="button" onclick="exit()" class="mt-3 w-full inline-flex justify-center rounded-md border border-teal-500 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-teal-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">Exit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="general.js"></script>
+
+</body>
+
+</html>
