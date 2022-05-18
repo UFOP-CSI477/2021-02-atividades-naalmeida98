@@ -15,7 +15,7 @@ class RingController extends Controller
      */
     public function index()
     {
-        //
+        return view('Products.ring');
     }
 
     /**

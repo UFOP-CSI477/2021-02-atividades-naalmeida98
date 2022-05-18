@@ -15,7 +15,7 @@ class NecklaceController extends Controller
      */
     public function index()
     {
-        //
+        return view('Products.necklace');
     }
 
     /**

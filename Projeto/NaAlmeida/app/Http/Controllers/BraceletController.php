@@ -15,7 +15,7 @@ class BraceletController extends Controller
      */
     public function index()
     {
-        //
+        return view('Products.bracelet');
     }
 
     /**

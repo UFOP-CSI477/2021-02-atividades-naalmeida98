@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Product;
+use App\Http\Controllers\RingController;
+use App\Http\Controllers\braceletController;
+use App\Http\Controllers\EarringController;
+use App\Http\Controllers\NecklaceController;
+use App\Http\Controllers\PendantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,17 +19,17 @@ use App\Models\Product;
 */
 
 
-//VIEWS
-
+//VIEW PRINCIPAL
 Route::get('/', function () {
     return view('home');
 });
 
 
 
-
 // CONTROLERS
+Route::resource('/ring', RingController::class);
+Route::resource('/bracelet', BraceletController::class);
+Route::resource('/necklace', NecklaceController::class);
+Route::resource('/earring', EarringController::class);
+Route::resource('/pendant', PendantController::class);
 
-Route::get('/product/all', function () {
-    return Product::all();
-});

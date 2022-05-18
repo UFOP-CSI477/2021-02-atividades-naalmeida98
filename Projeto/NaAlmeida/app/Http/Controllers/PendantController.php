@@ -15,7 +15,7 @@ class PendantController extends Controller
      */
     public function index()
     {
-        //
+        return view('Products.pendant');
     }
 
     /**
