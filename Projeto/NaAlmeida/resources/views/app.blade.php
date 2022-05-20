@@ -83,7 +83,7 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <button type="button" class="btn text-white btn-lg btn-block w-100">ANÉIS</button>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('ring.index') }}">ANÉIS</a>
                     <button type="button" class="btn text-white btn-lg btn-block w-100">BRINCOS</button>
                     <button type="button" class="btn text-white btn-lg btn-block w-100">CORDÕES</button>
                     <button type="button" class="btn text-white btn-lg btn-block w-100">PINGENTES</button>

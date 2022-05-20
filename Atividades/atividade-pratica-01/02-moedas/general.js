@@ -117,36 +117,57 @@ async function loadConverter() {
     date = document.getElementById('date').value;
     value = parseFloat(document.getElementById('value').value);
 
-    console.log('date', date);
-    console.log('value', value);
-    console.log('from', nameFrom);
-    console.log('to', nameTo);
+    // console.log('date', date);
+    // console.log('value', value);
+    // console.log('from', nameFrom);
+    // console.log('to', nameTo);
 
     try {
-        loadFromQuote();
-        loadToQuote();
+        if (date == "" || value == "" || nameFrom == "Select the option" || nameTo == "Select the option")
+            throw "Preencha todos os campos"
+
+        if (nameTo == "BRL" && nameFrom == "BRL") {
+            conversionResult = value;
+            setDates();
+        } else if (nameFrom == "BRL")
+            loadToQuote();
+        else if (nameTo == "BRL")
+            loadFromQuoteBRL();
+        else
+            loadFromQuote();
+
     } catch (error) {
-        window.alert("Escolha nova data! Não é possível fazer conversão com datas em branco, ou finais de semana e feriados.")
+        window.alert("Escolha nova data! Não é possível fazer conversão com datas em finais de semana e feriados.")
         return
     }
 
-    converter();
-    setDates();
+
 
     document.getElementById("popupConverter").style = "visibility: visible;";
-
 }
 
 function loadFromQuote() {
-
     console.log("loadFromQuote");
     fetch(`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${nameFrom}'&@dataCotacao='${date}'&$top=100&$format=json`)
         .then(response => response.json())
         .then(data => getValue(data, 'from'))
         //.then(data => console.log(data))
-        .catch(error);
+        .catch(error => console.error(error))
+        .finally(
+            () => loadToQuote());
     return;
+}
 
+function loadFromQuoteBRL() {
+    console.log("loadFromQuote");
+    fetch(`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${nameFrom}'&@dataCotacao='${date}'&$top=100&$format=json`)
+        .then(response => response.json())
+        .then(data => getValue(data, 'from'))
+        //.then(data => console.log(data))
+        .catch(error => console.error(error))
+        .finally(
+            () => converter());
+    return;
 }
 
 function loadToQuote() {
@@ -155,14 +176,14 @@ function loadToQuote() {
         .then(response => response.json())
         .then(data => getValue(data, 'to'))
         //.then(data => console.log(data))
-        .catch(error => console.error(error));
+        .catch(error => console.error(error))
+        .finally(() => converter());
     return;
-
 }
 
 function getValue(_data, _type) {
     if (_type == 'from') {
-        fromQuote = _data["value"][1]["cotacaoCompra"];
+        fromQuote = parseFloat(_data["value"][1]["cotacaoCompra"]);
         console.log('fromQuote', fromQuote);
 
     } else if (_type == 'to') {
@@ -174,9 +195,33 @@ function getValue(_data, _type) {
 
 function converter() {
 
-    conversionResult = ((1 / fromQuote) * toQuote) * value;
-    console.log("conversionResult", conversionResult);
+    // console.log("converter")
+    // console.log('fromQuote', fromQuote);
+    // console.log('toQuote', toQuote);
+    // console.log('value', value);
 
+    if (nameFrom == "BRL")
+        converterFromReal()
+    else if (nameTo == "BRL")
+        converterToReal()
+    else
+        converterGeneral()
+
+    // console.log("conversionResult", conversionResult);
+
+    setDates();
+}
+
+function converterGeneral() {
+    conversionResult = ((1 / fromQuote) * toQuote) * value;
+}
+
+function converterFromReal() {
+    conversionResult = toQuote * value;
+}
+
+function converterToReal() {
+    conversionResult = (1 / fromQuote) * value;
 }
 
 function setDates() {
@@ -186,4 +231,5 @@ function setDates() {
     document.getElementById('valueFromCoin').innerHTML = 'R$ ' + value;
     document.getElementById('nameFromCoin').innerHTML = nameFrom;
 
+    document.getElementById('datePopUp').innerHTML = date;
 }
