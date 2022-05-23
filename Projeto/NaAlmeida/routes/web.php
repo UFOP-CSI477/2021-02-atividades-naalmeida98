@@ -27,9 +27,9 @@ Route::get('/', function () {
 
 
 // CONTROLERS
-Route::resource('/ring', RingController::class);
-Route::resource('/bracelet', BraceletController::class);
-Route::resource('/necklace', NecklaceController::class);
-Route::resource('/earring', EarringController::class);
-Route::resource('/pendant', PendantController::class);
+Route::resource('/rings', RingController::class);
+Route::resource('/bracelets', BraceletController::class);
+Route::resource('/necklaces', NecklaceController::class);
+Route::resource('/earrings', EarringController::class);
+Route::resource('/pendants', PendantController::class);
 

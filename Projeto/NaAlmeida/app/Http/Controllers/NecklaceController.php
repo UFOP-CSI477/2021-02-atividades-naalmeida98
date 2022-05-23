@@ -16,7 +16,7 @@ class NecklaceController extends Controller
     public function index()
     {
         $necklaces = Necklace::orderBy('name')->get();
-        return view('Products.necklace', ['necklaces' => $necklaces]);
+        return view('products.necklaces.necklaces', ['necklaces' => $necklaces]);
     }
 
     /**

@@ -16,7 +16,7 @@ class PendantController extends Controller
     public function index()
     {
         $pendants = Pendant::orderBy('name')->get();
-        return view('Products.pendant', ['pendants' => $pendants]);
+        return view('products.pendants.pendants', ['pendants' => $pendants]);
     }
 
     /**

@@ -83,11 +83,11 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('ring.index') }}">ANÉIS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('earring.index') }}">BRINCOS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('necklace.index') }}">CORDÕES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('pendant.index') }}">PINGENTES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('bracelet.index') }}">PULSEIRAS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('rings.index') }}">ANÉIS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('earrings.index') }}">BRINCOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('necklaces.index') }}">CORDÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('pendants.index') }}">PINGENTES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('bracelets.index') }}">PULSEIRAS</a>
                 </div>
             </div>
             <div class="offcanvas offcanvas-end text-white" style="background-color: #FA6699;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">
