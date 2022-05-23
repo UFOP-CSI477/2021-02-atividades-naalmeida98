@@ -137,11 +137,9 @@ async function loadConverter() {
             loadFromQuote();
 
     } catch (error) {
-        window.alert("Escolha nova data! Não é possível fazer conversão com datas em finais de semana e feriados.")
+        window.alert(error)
         return
     }
-
-
 
     document.getElementById("popupConverter").style = "visibility: visible;";
 }
