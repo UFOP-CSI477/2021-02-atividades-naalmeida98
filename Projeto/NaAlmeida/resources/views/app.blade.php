@@ -71,7 +71,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-list"></i>
             </button>
-            <a style="font-size:1.4rem;" class="navbar-brand" href="#">NA ALMEIDA</a>
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/">NA ALMEIDA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-bag-heart-fill"></i>
             </button>
@@ -84,10 +84,10 @@
                 <hr>
                 <div class="offcanvas-body">
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('ring.index') }}">ANÉIS</a>
-                    <button type="button" class="btn text-white btn-lg btn-block w-100">BRINCOS</button>
-                    <button type="button" class="btn text-white btn-lg btn-block w-100">CORDÕES</button>
-                    <button type="button" class="btn text-white btn-lg btn-block w-100">PINGENTES</button>
-                    <button type="button" class="btn text-white btn-lg btn-block w-100">PULSEIRAS</button>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('earring.index') }}">BRINCOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('necklace.index') }}">CORDÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('pendant.index') }}">PINGENTES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('bracelet.index') }}">PULSEIRAS</a>
                 </div>
             </div>
             <div class="offcanvas offcanvas-end text-white" style="background-color: #FA6699;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">

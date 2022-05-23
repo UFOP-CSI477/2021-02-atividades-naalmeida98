@@ -15,7 +15,8 @@ class BraceletController extends Controller
      */
     public function index()
     {
-        return view('Products.bracelet');
+        $bracelets = Bracelet::orderBy('name')->get();
+        return view('Products.bracelet', ['bracelets' => $bracelets]);
     }
 
     /**

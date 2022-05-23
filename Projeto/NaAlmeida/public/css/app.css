@@ -21,6 +21,31 @@ i {
     max-width: 960px;
 }
 
+.btn-outline-secondary {
+    --bs-btn-hover-bg: #FA6699;
+}
+
+
+/* .bagBtn {
+    border-color: #FA6699;
+    background-color: #FA6699;
+}
+
+.bagBtn:hover {
+    border-color: #FA6699;
+    background-color: white;
+}
+
+.bagIcon {
+    background-color: #FA6699;
+    color: white;
+}
+
+.bagIcon:hover {
+    background-color: white;
+    color: #FA6699;
+} */
+
 
 /*
    * Custom translucent site header

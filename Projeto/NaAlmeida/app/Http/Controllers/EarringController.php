@@ -15,7 +15,8 @@ class EarringController extends Controller
      */
     public function index()
     {
-        return view('Products.earring');
+        $earrings = Earring::orderBy('name')->get();
+        return view('Products.earring', ['earrings' => $earrings]);
     }
 
     /**

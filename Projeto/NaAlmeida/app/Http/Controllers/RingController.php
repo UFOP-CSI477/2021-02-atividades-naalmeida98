@@ -15,7 +15,8 @@ class RingController extends Controller
      */
     public function index()
     {
-        return view('Products.ring');
+        $rings = Ring::orderBy('name')->get();
+        return view('Products.ring', ['rings' => $rings]);
     }
 
     /**
