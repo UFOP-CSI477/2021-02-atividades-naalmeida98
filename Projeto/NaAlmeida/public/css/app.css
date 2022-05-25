@@ -1,4 +1,4 @@
-/*FONTES PRINCIAPAIS DO PROJETO */
+/*FONTES PRINCIPAIS DO PROJETO */
 
 a {
     font-family: 'Playfair Display SC', serif;
@@ -14,37 +14,31 @@ label {
 
 i {
     font-size: 1.3em;
-    color: white
+    color: white;
+    font-weight: none;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
 }
 
 .container {
     max-width: 960px;
 }
 
-.btn-outline-secondary {
-    --bs-btn-hover-bg: #FA6699;
-}
 
+/*RING*/
 
-/* .bagBtn {
-    border-color: #FA6699;
+#btnAddBag {
     background-color: #FA6699;
 }
 
-.bagBtn:hover {
+.inputQTD {
+    margin-left: 2px;
     border-color: #FA6699;
-    background-color: white;
+    border-radius: 8px;
+    padding-left: 10px;
+    border-width: 3px;
+    width: 35px;
 }
-
-.bagIcon {
-    background-color: #FA6699;
-    color: white;
-}
-
-.bagIcon:hover {
-    background-color: white;
-    color: #FA6699;
-} */
 
 
 /*

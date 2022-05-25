@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ env('APP_NAME') }}</title>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars-offcanvas/">
-    <link href="css/app.css" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {

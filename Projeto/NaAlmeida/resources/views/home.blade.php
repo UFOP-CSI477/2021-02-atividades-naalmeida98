@@ -24,7 +24,6 @@
                 <img src="{{ asset('images/image05.jpg') }}" alt="image02">
                 <div class="container">
                     <div class="carousel-caption">
-
                         <p></p>
                         <h1>Joias a partir de R$ 43,00</h1>
                         <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Learn more</a></p>
