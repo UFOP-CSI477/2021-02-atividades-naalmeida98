@@ -10,10 +10,11 @@ h2,
 h3,
 label {
     font-family: 'Montserrat', sans-serif;
+    color: #696969;
 }
 
 i {
-    font-size: 1.3em;
+    font-size: 1.3rem;
     color: white;
     font-weight: none;
     font-family: 'Montserrat', sans-serif;
@@ -24,20 +25,14 @@ i {
     max-width: 960px;
 }
 
-
-/*RING*/
-
-#btnAddBag {
-    background-color: #FA6699;
+.nameProduct {
+    font-family: 'Playfair Display SC', serif;
+    color: #696969;
 }
 
-.inputQTD {
-    margin-left: 2px;
-    border-color: #FA6699;
-    border-radius: 8px;
-    padding-left: 10px;
-    border-width: 3px;
-    width: 35px;
+.productSpecification {
+    font-family: 'Montserrat', sans-serif;
+    color: #696969;
 }
 
 

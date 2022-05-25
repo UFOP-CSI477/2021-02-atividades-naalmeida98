@@ -20,7 +20,7 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group" >
                                     <button type="button" style="border-color:#FA6699; background-color: #FA6699" class="btn btn-sm btn-outline-secondary" >
-                                        <i class="bi bi-bag-heart-fill" style="background-color: #FA6699;"></i>
+                                        <i class="bi bi-bag-plus-fill" style="background-color: #FA6699;"></i>
                                     </button>
                                     <!-- <a type="button" href="{{ route('rings.show', $ring->id) }}" class="btn btn-sm btn-outline-secondary">Edit</a> -->
                                 </div>
@@ -33,5 +33,7 @@
         </div>
     </div>
 </div>
+
+
 
 @endsection

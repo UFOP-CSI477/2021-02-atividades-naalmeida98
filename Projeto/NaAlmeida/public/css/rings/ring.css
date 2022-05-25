@@ -1,0 +1,14 @@
+/*RING*/
+
+#btnAddBag {
+    background-color: #FA6699;
+}
+
+.inputQTD {
+    margin-left: 2px;
+    border-color: #FA6699;
+    border-radius: 8px;
+    padding-left: 19px;
+    border-width: 3px;
+    width: 55px;
+}
