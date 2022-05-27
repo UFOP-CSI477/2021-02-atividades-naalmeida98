@@ -48,6 +48,8 @@ class RingController extends Controller
      */
     public function show(Ring $ring)
     {
+        //session()->regenerate();
+        session(['product' => 'teste']);
         return view('products.rings.ring', ['ring' => $ring]);
     }
 

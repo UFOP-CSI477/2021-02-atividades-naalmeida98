@@ -13,14 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bracelets', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('name',25);
             $table->string('code',12);
-            $table->float('value',7,2);
-            $table->string('description',100);
-            $table->integer('size');
+            $table->float('value_av',7,2);
+            $table->float('value_ap',7,2);
+            $table->string('description',500);
+            // $table->integer('size');
             // $table->string('type',15);
             // $table->string('category',30);
             // $table->integer('qtdStock');
@@ -34,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bracelets');
+        Schema::dropIfExists('products');
     }
 };

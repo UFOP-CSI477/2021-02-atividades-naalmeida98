@@ -84,10 +84,10 @@
                 <hr>
                 <div class="offcanvas-body">
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('rings.index') }}">ANÉIS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('earrings.index') }}">BRINCOS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('necklaces.index') }}">CORDÕES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('pendants.index') }}">PINGENTES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('bracelets.index') }}">PULSEIRAS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('products.index') }}">BRINCOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">CORDÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">PINGENTES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">PULSEIRAS</a>
                 </div>
             </div>
             <div class="offcanvas offcanvas-end text-white" style="background-color: #FA6699;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">
@@ -97,7 +97,65 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-                    <!-- INSERIR CARRINHO DE COMPRAS -->
+
+                    <div class="col py-3">
+                        <div class="card ">
+                            <div class="card-body">
+                                <p class="card-text">Anel</p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <img src="{{ asset('images/image04.jpg') }}" alt="product" width="80" height="80">
+                                    </div>
+                                    <div class="px-4" >
+                                        <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="minusQtdBag()">
+                                            <div class="">
+                                                <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
+                                            </div>
+                                        </a>
+                                        <input type="text" name="qtd" id="qtdBag" value="1" class="inputQTD">
+                                        <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="plusQtdBag()">
+                                            <div class="">
+                                                <i class="bi bi-plus-circle-fill" style="color: #FA6699;"></i>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div >
+                                        <p class="text-muted">
+                                            R$ 128,00 <br>
+                                            à vista
+                                        </p>
+                                        <p class="text-muted" style="font-size: 0.7rem;">
+                                            R$ 148,00 <br> à prazo
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Valor total -->
+                    <div class="col">
+                        <div class="card ">
+                            <div class="card-body">
+                                <p class="card-text">Total</p>
+                                <div >
+                                    <p class="text-muted">R$ 128,00 à vista</p>
+                                    <p class="text-muted" style="font-size: 0.7rem;">
+                                            R$ 148,00  à prazo
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="py-3">
+                        <a class="btn text-white btn-lg btn-block w-100" type="button" style="background-color: white; color:#FA6699; font-weight:bold;">
+                            <div class="d-flex flex-wrap justify-content-center">
+                                <i class="bi bi-bag-check-fill" style="color: #FA6699; font-size:1rem;"> FINALIZAR COMPRA</i>
+                            </div>
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -115,6 +173,7 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- JS -->
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <footer class="container">

@@ -2,10 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RingController;
-use App\Http\Controllers\braceletController;
-use App\Http\Controllers\EarringController;
-use App\Http\Controllers\NecklaceController;
-use App\Http\Controllers\PendantController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +26,6 @@ Route::get('/', function () {
 
 // CONTROLERS
 Route::resource('/rings', RingController::class);
-Route::resource('/bracelets', BraceletController::class);
-Route::resource('/necklaces', NecklaceController::class);
-Route::resource('/earrings', EarringController::class);
-Route::resource('/pendants', PendantController::class);
+Route::resource('/products', ProductController::class);
+
 

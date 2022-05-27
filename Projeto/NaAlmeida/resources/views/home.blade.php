@@ -10,33 +10,33 @@
             <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="{{ asset('images/image04.jpg') }}" alt="image01">
+            <div class="carousel-item active" >
+                <img src="{{ asset('images/image04.jpg') }}" alt="image01" class="objectImage">
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>COMPRE E GANHE</h1>
-                        <p>uma maleta exclusiva da Rommanel</p>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Sign up today</a></p>
+                        <p style="color: white ;">uma maleta exclusiva da Rommanel</p>
+                        <!-- <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Sign up today</a></p> -->
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/image05.jpg') }}" alt="image02">
+                <img src="{{ asset('images/image05.jpg') }}" alt="image02" class="objectImage">
                 <div class="container">
                     <div class="carousel-caption">
                         <p></p>
                         <h1>Joias a partir de R$ 43,00</h1>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Learn more</a></p>
+                        <!-- <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Learn more</a></p> -->
                     </div>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/image03.jpg') }}" alt="image03">
+                <img src="{{ asset('images/image03.jpg') }}" alt="image03" class="objectImage">
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <h1>Receba no conforto da sua casa</h1>
                         <p></p>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Browse gallery</a></p>
+                        <!-- <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Browse gallery</a></p> -->
                     </div>
                 </div>
             </div>

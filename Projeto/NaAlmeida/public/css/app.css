@@ -21,6 +21,22 @@ i {
     font-style: normal;
 }
 
+.objectImage {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.inputQTD {
+    margin-left: 2px;
+    border-color: #FA6699;
+    border-radius: 8px;
+    padding-left: 19px;
+    border-width: 3px;
+    width: 55px;
+}
+
 .container {
     max-width: 960px;
 }
@@ -140,7 +156,7 @@ ody {
 /* Declare heights because of positioning of img element */
 
 .carousel-item {
-    height: 20rem;
+    height: 500px;
 }
 
 
@@ -187,6 +203,28 @@ ody {
 
 
 /* rtl:end:remove */
+
+
+/* RESPONSIVE CSS
+  -------------------------------------------------- */
+
+@media (min-width: 40em) {
+    /* Bump up size of carousel content */
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+    .featurette-heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .featurette-heading {
+        margin-top: 7rem;
+    }
+}
 
 
 /* RESPONSIVE CSS

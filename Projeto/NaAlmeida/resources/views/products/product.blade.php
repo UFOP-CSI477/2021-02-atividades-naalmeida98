@@ -67,14 +67,14 @@
         <div class="col-sm-4">
             <div class="fs-2 py-1">
                 <div class="nameProduct">
-                    {{ $ring->name }} - {{session('product')}}
+                    {{ $product->name }} - {{session('product')}}
                 </div>
             </div>
             <div class="productSpecification">
                 <form action="">
                     <div class="d-flex flex-column px-4 py-2 justify-content-start">
-                        <div class="fs-4" style="font-weight:bold;">R$ {{ $ring->value }}.00 à vista</div>
-                        <div class="fs-7 ">R$ {{ ($ring->value)*1.1 }}0 à prazo</div>
+                        <div class="fs-4" style="font-weight:bold;">R$ {{ $product->value }}.00 à vista</div>
+                        <div class="fs-7 ">R$ {{ ($product->value)*1.1 }}0 à prazo</div>
                     </div>
 
                     <div class="px-4">
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="fs-13 p-2">
-                        {{ $ring->description}}
+                        {{ $product->description}}
                     </div>
                 </form>
             </div>
@@ -111,7 +111,7 @@
 </div>
 
 <script src="{{ asset('js/shopping/shoppingBag.js') }}"></script>
-<script src="{{ asset('js/rings/ring.js') }}"></script>
-<link href="{{ asset('css/rings/ring.css') }}" rel="stylesheet">
+<script src="{{ asset('js/products/product.js') }}"></script>
+<link href="{{ asset('css/products/product.css') }}" rel="stylesheet">
 
 @endsection

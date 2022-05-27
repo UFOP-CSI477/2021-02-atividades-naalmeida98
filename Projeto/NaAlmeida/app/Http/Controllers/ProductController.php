@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bracelet;
-use App\Http\Requests\StoreBraceletRequest;
-use App\Http\Requests\UpdateBraceletRequest;
+use App\Models\Product;
+use App\Http\Requests\StoreProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 
-class BraceletController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class BraceletController extends Controller
      */
     public function index()
     {
-        $bracelets = Bracelet::orderBy('name')->get();
-        return view('products.bracelets.bracelets', ['bracelets' => $bracelets]);
+        $products = Product::orderBy('name')->get();
+        return view('products.products', ['products' => $products]);
     }
 
     /**
@@ -32,10 +32,10 @@ class BraceletController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreBraceletRequest  $request
+     * @param  \App\Http\Requests\StoreProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreBraceletRequest $request)
+    public function store(StoreProductRequest $request)
     {
         //
     }
@@ -43,21 +43,22 @@ class BraceletController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Bracelet  $bracelet
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Bracelet $bracelet)
+    public function show(Product $product)
     {
-        //
+        session(['product' => 'teste']);
+        return view('products.product', ['product' => $product]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Bracelet  $bracelet
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Bracelet $bracelet)
+    public function edit(Product $product)
     {
         //
     }
@@ -65,11 +66,11 @@ class BraceletController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateBraceletRequest  $request
-     * @param  \App\Models\Bracelet  $bracelet
+     * @param  \App\Http\Requests\UpdateProductRequest  $request
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateBraceletRequest $request, Bracelet $bracelet)
+    public function update(UpdateProductRequest $request, Product $product)
     {
         //
     }
@@ -77,10 +78,10 @@ class BraceletController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Bracelet  $bracelet
+     * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Bracelet $bracelet)
+    public function destroy(Product $product)
     {
         //
     }
