@@ -11,7 +11,7 @@
         </div>
         <div class="carousel-inner">
             <div class="carousel-item active" >
-                <img src="{{ asset('images/image04.jpg') }}" alt="image01" class="objectImage">
+                <img src="{{ asset('images/image04.jpg') }}" alt="image01" class="containerImage">
                 <div class="container">
                     <div class="carousel-caption text-start">
                         <h1>COMPRE E GANHE</h1>
@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/image05.jpg') }}" alt="image02" class="objectImage">
+                <img src="{{ asset('images/image05.jpg') }}" alt="image02" class="containerImage">
                 <div class="container">
                     <div class="carousel-caption">
                         <p></p>
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="{{ asset('images/image03.jpg') }}" alt="image03" class="objectImage">
+                <img src="{{ asset('images/image03.jpg') }}" alt="image03" class="containerImage">
                 <div class="container">
                     <div class="carousel-caption text-end">
                         <h1>Receba no conforto da sua casa</h1>

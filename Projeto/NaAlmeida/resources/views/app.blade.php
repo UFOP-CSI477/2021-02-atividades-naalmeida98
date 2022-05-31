@@ -83,11 +83,11 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('rings.index') }}">ANÉIS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('products.index') }}">BRINCOS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">CORDÕES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">PINGENTES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="">PULSEIRAS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 1) }}">ANÉIS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 3) }}">BRINCOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 2) }}">CORDÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 5) }}">PINGENTES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 4) }}">PULSEIRAS</a>
                 </div>
             </div>
             <div class="offcanvas offcanvas-end text-white" style="background-color: #FA6699;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">

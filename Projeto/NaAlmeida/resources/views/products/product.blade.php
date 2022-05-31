@@ -22,7 +22,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/image04.jpg') }}" alt="image01">
+                        <img src="{{ asset('images/image04.jpg') }}" alt="image01" class="imagesBook">
                         <div class="container">
                             <div class="carousel-caption text-start">
                                 <!-- <h1>COMPRE E GANHE</h1>
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image05.jpg') }}" alt="image02">
+                        <img src="{{ asset('images/image05.jpg') }}" alt="image02" class="imagesBook">
                         <div class="container">
                             <div class="carousel-caption">
                                 <!-- <p></p>
@@ -42,7 +42,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image03.jpg') }}" alt="image03">
+                        <img src="{{ asset('images/image03.jpg') }}" alt="image03" class="imagesBook">
                         <div class="container">
                             <div class="carousel-caption text-end">
                                 <!-- <h1>Receba no conforto da sua casa</h1>
@@ -73,8 +73,8 @@
             <div class="productSpecification">
                 <form action="">
                     <div class="d-flex flex-column px-4 py-2 justify-content-start">
-                        <div class="fs-4" style="font-weight:bold;">R$ {{ $product->value }}.00 à vista</div>
-                        <div class="fs-7 ">R$ {{ ($product->value)*1.1 }}0 à prazo</div>
+                        <div class="fs-4" style="font-weight:bold;">R$ {{ $product->value_av }}.00 à vista</div>
+                        <div class="fs-7 ">R$ {{ $product->value_ap }}0 à prazo</div>
                     </div>
 
                     <div class="px-4">

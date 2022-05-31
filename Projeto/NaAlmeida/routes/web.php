@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RingController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 
 /*
@@ -27,5 +28,6 @@ Route::get('/', function () {
 // CONTROLERS
 Route::resource('/rings', RingController::class);
 Route::resource('/products', ProductController::class);
+Route::resource('/categories', CategoryController::class);
 
 

@@ -15,9 +15,10 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained('categories');
             $table->timestamps();
-            $table->string('name',25);
-            $table->string('code',12);
+            $table->string('name',70);
+            $table->string('code',50);
             $table->float('value_av',7,2);
             $table->float('value_ap',7,2);
             $table->string('description',500);
