@@ -3,7 +3,7 @@ let qtd;
 
 function minusQtd() {
     qtd = parseInt(document.getElementById("qtd").value);
-    if (qtdBag != 0)
+    if (qtd != 1)
         document.getElementById("qtd").value = qtd - 1;
 }
 

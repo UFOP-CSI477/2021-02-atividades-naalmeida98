@@ -67,7 +67,7 @@
         <div class="col-sm-4">
             <div class="fs-2 py-1">
                 <div class="nameProduct">
-                    {{ $product->name }} - {{session('product')}}
+                    {{ $product->name }}
                 </div>
             </div>
             <div class="productSpecification">
@@ -93,7 +93,7 @@
 
                     <div class="py-3">
                         <a class="btn text-white btn-lg btn-block w-100" id="btnAddBag" type="button"
-                            onclick="addBag()">
+                            href="/shoppings/1">
                             <div class="d-flex flex-wrap justify-content-center">
                                 <i class="bi bi-bag-plus-fill" style="background-color: #FA6699; font-size:1rem;"> CARRINHO</i>
                             </div>
@@ -101,7 +101,7 @@
                     </div>
 
                     <div class="fs-13 p-2">
-                        {{ $product->description}}
+                        {{ $product->description }}
                     </div>
                 </form>
             </div>

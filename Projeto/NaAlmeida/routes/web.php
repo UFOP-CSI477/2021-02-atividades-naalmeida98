@@ -4,23 +4,42 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RingController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Models\Product;
+use Illuminate\Support\Facades\Session;
 
 
 //VIEW PRINCIPAL
 Route::get('/', function () {
     return view('home');
+});
+
+Route::get('/shoppings/{id}', function($id)
+{
+    // if(!session()->has('bags')){
+    //     Session::put('bags','products[]');
+    // }
+    // Session::flush();
+    $product = Product::find($id);
+
+    $session = session('shoppings_list');
+
+    $product_formated = [
+        "id" => $product->code,
+        "name" => $product->name,
+        "code" => $product->code,
+        "value_av" => $product->value_av,
+        "value_ap" => $product->value_ap,
+    ];
+
+    if($session == null){
+        $session = [];
+        array_unshift($session, $product_formated);
+    }else{
+        array_push($session, $product_formated);
+    }
+
+    Session::put('shoppings_list', $session);
+    return view('products.product', ['product' => $product]);
 });
 
 
@@ -29,5 +48,6 @@ Route::get('/', function () {
 Route::resource('/rings', RingController::class);
 Route::resource('/products', ProductController::class);
 Route::resource('/categories', CategoryController::class);
+
 
 

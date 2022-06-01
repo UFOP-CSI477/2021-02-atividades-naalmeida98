@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -47,7 +47,6 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        session(['product' => 'teste']);
         return view('products.product', ['product' => $product]);
     }
 
@@ -84,4 +83,7 @@ class ProductController extends Controller
     {
         //
     }
+
+
+
 }

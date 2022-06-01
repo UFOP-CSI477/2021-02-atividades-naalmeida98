@@ -24,7 +24,7 @@
                                     </button>
                                     <!-- <a type="button" href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-outline-secondary">Edit</a> -->
                                 </div>
-                                <small class="text-muted">R$ {{ $product->value }},00</small>
+                                <small class="text-muted">R$ {{ $product->value_av }},00</small>
                             </div>
                         </div>
                     </div>

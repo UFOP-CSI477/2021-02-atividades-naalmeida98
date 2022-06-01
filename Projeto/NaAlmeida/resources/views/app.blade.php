@@ -97,16 +97,17 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="offcanvas-body">
-
+                    @if(session('shoppings_list'))
+                    @foreach(session('shoppings_list') as $product)
                     <div class="col py-3">
                         <div class="card ">
                             <div class="card-body">
-                                <p class="card-text">Anel</p>
+                                <p class="card-text">{{data_get($product,'name')}}</p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <img src="{{ asset('images/image04.jpg') }}" alt="product" width="80" height="80">
                                     </div>
-                                    <div class="px-4" >
+                                    <div class="px-4">
                                         <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="minusQtdBag()">
                                             <div class="">
                                                 <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
@@ -119,7 +120,7 @@
                                             </div>
                                         </a>
                                     </div>
-                                    <div >
+                                    <div>
                                         <p class="text-muted">
                                             R$ 128,00 <br>
                                             à vista
@@ -132,16 +133,17 @@
                             </div>
                         </div>
                     </div>
-
+                    @endforeach
+                    @endif
                     <!-- Valor total -->
                     <div class="col">
                         <div class="card ">
                             <div class="card-body">
                                 <p class="card-text">Total</p>
-                                <div >
+                                <div>
                                     <p class="text-muted">R$ 128,00 à vista</p>
                                     <p class="text-muted" style="font-size: 0.7rem;">
-                                            R$ 148,00  à prazo
+                                        R$ 148,00 à prazo
                                     </p>
                                 </div>
                             </div>
