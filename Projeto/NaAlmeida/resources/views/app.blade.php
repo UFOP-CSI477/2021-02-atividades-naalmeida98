@@ -102,7 +102,9 @@
                     <div class="col py-3">
                         <div class="card ">
                             <div class="card-body">
-                                <p class="card-text">{{data_get($product,'name')}}</p>
+                                <div class="offcanvas-header p-0">
+                                    <p class="card-text justify-content-center">{{data_get($product,'name')}}</p>
+                                </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
                                         <img src="{{ asset('images/image04.jpg') }}" alt="product" width="80" height="80">
@@ -122,14 +124,15 @@
                                     </div>
                                     <div>
                                         <p class="text-muted">
-                                            R$ 128,00 <br>
+                                            {{data_get($product,'value_av')}}<br>
                                             à vista
                                         </p>
                                         <p class="text-muted" style="font-size: 0.7rem;">
-                                            R$ 148,00 <br> à prazo
+                                            {{data_get($product,'value_ap')}}<br> à prazo
                                         </p>
                                     </div>
                                 </div>
+                                <a class="bi bi-trash-fill" style="color: #FA6699;"></a>
                             </div>
                         </div>
                     </div>

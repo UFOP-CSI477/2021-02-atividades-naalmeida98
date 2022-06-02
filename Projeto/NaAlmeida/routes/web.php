@@ -13,12 +13,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/shoppings/{id}', function($id)
+Route::get('/shoppings/id', function($id)
 {
-    // if(!session()->has('bags')){
-    //     Session::put('bags','products[]');
-    // }
-    // Session::flush();
+    
+    Session::flush();
     $product = Product::find($id);
 
     $session = session('shoppings_list');
@@ -27,8 +25,9 @@ Route::get('/shoppings/{id}', function($id)
         "id" => $product->code,
         "name" => $product->name,
         "code" => $product->code,
-        "value_av" => $product->value_av,
-        "value_ap" => $product->value_ap,
+        "value_av" => (float)$product->value_av,
+        "value_ap" => (float)$product->value_ap,
+        // "qtd" => $qtd
     ];
 
     if($session == null){
