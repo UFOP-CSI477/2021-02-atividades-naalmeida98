@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
+use App\Models\Category;
 
 class ProductController extends Controller
 {
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-
+        //
     }
 
     /**
@@ -25,7 +26,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('adm.products.create');
     }
 
     /**
@@ -36,7 +37,13 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        // dd($request);
+        // $category = Category::where('name', "ring")->get();
+        // json_encode($category);
+        // $request->category_id = 1;
+        Product::create($request->all());
+        session()->flash('mensagem', 'Produto cadastrado com sucesso!');
+        return redirect()->route('products.create');
     }
 
     /**
@@ -47,6 +54,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        // $product->append('qtd')->toArray();
         return view('products.product', ['product' => $product]);
     }
 
@@ -83,7 +91,4 @@ class ProductController extends Controller
     {
         //
     }
-
-
-
 }

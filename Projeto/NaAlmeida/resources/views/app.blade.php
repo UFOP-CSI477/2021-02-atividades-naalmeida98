@@ -75,7 +75,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-bag-heart-fill"></i>
             </button>
-            <div class="offcanvas offcanvas-start text-white" style="background-color: #FA6699;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
+            <div class="offcanvas offcanvas-start text-white" style="background-color: #F06E7F;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
                     <i class="bi bi-list"></i>
                     <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">MENU</h5>
@@ -88,17 +88,42 @@
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 2) }}">CORDÕES</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 5) }}">PINGENTES</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 4) }}">PULSEIRAS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('products.create') }}">CADASTRAR</a>
                 </div>
             </div>
-            <div class="offcanvas offcanvas-end text-white" style="background-color: #FA6699;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">
+            <div class="offcanvas offcanvas-end text-white" style="background-color: #F06E7F;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
                     <i class="bi bi-bag-heart-fill"></i>
                     <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">MINHAS JOIAS</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
+
                 <div class="offcanvas-body">
                     @if(session('shoppings_list'))
+                    @php
+                    $value_total_av = 0;
+                    $value_total_ap = 0;
+                    @endphp
+
                     @foreach(session('shoppings_list') as $product)
+
+                    <script>
+                        function minusQtdBag() {
+
+                            id = "<?php echo data_get($product, 'id') ?>";
+                            console.log("id", id);
+                            qtd = parseInt(document.getElementById(id).value);
+                            if (qtd != 1)
+                                document.getElementById(id).value = qtd - 1;
+                        }
+
+                        function plusQtdBag() {
+                            id = "<?php echo data_get($product, 'id') ?>";
+                            qtd = parseInt(document.getElementById(id).value);
+                            document.getElementById(id).value = qtd + 1;
+                        }
+                    </script>
+
                     <div class="col py-3">
                         <div class="card ">
                             <div class="card-body">
@@ -115,7 +140,7 @@
                                                 <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
                                             </div>
                                         </a>
-                                        <input type="text" name="qtd" id="qtdBag" value="1" class="inputQTD">
+                                        <input type="text" name="qtd" id="{{ data_get($product,'id') }}" value="{{data_get($product,'qtd')}}" class="inputQTD">
                                         <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="plusQtdBag()">
                                             <div class="">
                                                 <i class="bi bi-plus-circle-fill" style="color: #FA6699;"></i>
@@ -127,26 +152,33 @@
                                             {{data_get($product,'value_av')}}<br>
                                             à vista
                                         </p>
+
                                         <p class="text-muted" style="font-size: 0.7rem;">
                                             {{data_get($product,'value_ap')}}<br> à prazo
                                         </p>
+
+                                        @php
+                                        $value_total_av = $value_total_av + data_get($product,'value_av');
+                                        $value_total_ap = $value_total_ap + data_get($product,'value_ap');
+                                        @endphp
+
                                     </div>
                                 </div>
-                                <a class="bi bi-trash-fill" style="color: #FA6699;"></a>
+                                <a class="bi bi-trash-fill" style="color: #FA6699;" href="/shoppings/1/remove/1"></a>
                             </div>
                         </div>
                     </div>
                     @endforeach
-                    @endif
+
                     <!-- Valor total -->
                     <div class="col">
                         <div class="card ">
                             <div class="card-body">
                                 <p class="card-text">Total</p>
                                 <div>
-                                    <p class="text-muted">R$ 128,00 à vista</p>
+                                    <p class="text-muted">{{$value_total_av}} à vista</p>
                                     <p class="text-muted" style="font-size: 0.7rem;">
-                                        R$ 148,00 à prazo
+                                        {{$value_total_ap}} à prazo
                                     </p>
                                 </div>
                             </div>
@@ -154,13 +186,13 @@
                     </div>
 
                     <div class="py-3">
-                        <a class="btn text-white btn-lg btn-block w-100" type="button" style="background-color: white; color:#FA6699; font-weight:bold;">
+                        <a href="/checkout" class="btn text-white btn-lg btn-block w-100" type="button" style="background-color: white; color:#FA6699; font-weight:bold;">
                             <div class="d-flex flex-wrap justify-content-center">
                                 <i class="bi bi-bag-check-fill" style="color: #FA6699; font-size:1rem;"> FINALIZAR COMPRA</i>
                             </div>
                         </a>
                     </div>
-
+                    @endif
                 </div>
             </div>
         </div>
@@ -182,8 +214,14 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <footer class="container">
-        <p class="float-end"><a href="#">Back to top</a></p>
-        <p>&copy; 2017–2022 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <hr class="my-2">
+        <div class="py-4">
+            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #F06E7F  ; ">Back to top</a>
+
+            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color:#F06E7F ; "><i class="bi bi-instagram p-2" ></i></a>
+            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color: #F06E7F ; "><i class="bi bi-whatsapp p-2"></i></a>
+
+        </div>
     </footer>
 
 </body>

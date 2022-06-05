@@ -2,12 +2,13 @@ let qtd;
 
 
 function minusQtd() {
-    qtd = parseInt(document.getElementById("qtd").value);
+    console.log("aqui");
+    qtd = parseInt(document.getElementById("qtdProduct").value);
     if (qtd != 1)
-        document.getElementById("qtd").value = qtd - 1;
+        document.getElementById("qtdProduct").value = qtd - 1;
 }
 
 function plusQtd() {
-    qtd = parseInt(document.getElementById("qtd").value);
-    document.getElementById("qtd").value = qtd + 1;
+    qtd = parseInt(document.getElementById("qtdProduct").value);
+    document.getElementById("qtdProduct").value = qtd + 1;
 }

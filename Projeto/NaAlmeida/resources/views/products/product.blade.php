@@ -83,7 +83,8 @@
                                 <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
                             </div>
                         </a>
-                        <input type="text" name="qtd" id="qtdProduct" value="1" class="inputQTD">
+                        <input type="text" name="qtd" id="qtdProduct" value="{{ $product->qtd_cart }}" class="inputQTD" >
+
                         <a class="btn text-white p-1" type="button" onclick="plusQtd()">
                             <div class="d-flex flex-wrap justify-content-center">
                                 <i class="bi bi-plus-circle-fill" style="color: #FA6699;"></i>
@@ -91,17 +92,27 @@
                         </a>
                     </div>
 
+                    <script>
+                        function redirect() {
+                        id = "<?php echo $product->id ?>";
+                        console.log(id);
+                        qtd = document.getElementById("qtdProduct").value;
+                        url = "/shoppings/add/" + id + "/bag/" + qtd;
+                        window.location.href = url;
+                        }
+
+                    </script>
+
                     <div class="py-3">
                         <a class="btn text-white btn-lg btn-block w-100" id="btnAddBag" type="button"
-                            onclick="addBag()" href="/shoppings/1">
+                            onclick="redirect()" >
                             <div class="d-flex flex-wrap justify-content-center">
                                 <i class="bi bi-bag-plus-fill" style="background-color: #FA6699; font-size:1rem;"> CARRINHO</i>
                             </div>
                         </a>
                     </div>
-
                     <div class="fs-13 p-2" id="descriptionProduct">
-                        {{ $product->description }} - {{var_dump(session('shoppings_list'))}}
+                        {{ $product->description }}
                     </div>
                     <div class="fs-13 p-2" id="codeProduct">
                         {{ $product->code }}

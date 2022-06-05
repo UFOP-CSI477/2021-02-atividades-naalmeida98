@@ -16,5 +16,9 @@ function addBag() {
 
     product = new Product(nameProduct, codeProduct, valueAvProduct, valueApProduct, qtdProduct)
     console.log("product", product);
+}
+
+function editQtdBag() {
+
 
 }

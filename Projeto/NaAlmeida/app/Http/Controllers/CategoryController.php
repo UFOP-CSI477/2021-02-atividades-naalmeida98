@@ -16,8 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // $products = Product::orderBy('name')->get();
-        // return view('products.products', ['products' => $products]);
+        //
     }
 
     /**
