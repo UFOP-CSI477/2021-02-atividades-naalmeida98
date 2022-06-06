@@ -1,31 +1,13 @@
-<!doctype html>
-<html lang="en" class="h-100">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.98.0">
-    <title>Cover Template · Bootstrap v5.2</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
-
-
-
-
-
-    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-    <meta name="theme-color" content="#712cf9">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ env('APP_NAME') }}</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/navbars-offcanvas/">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <style>
         .bd-placeholder-img {
@@ -79,46 +61,58 @@
             -webkit-overflow-scrolling: touch;
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
-    <link href="cover.css" rel="stylesheet">
 </head>
 
-<body class="d-flex h-100 text-center text-white bg-dark">
+<body>
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <header class="mb-auto">
-            <div>
-                <h3 class="float-md-start mb-0">Cover</h3>
-                <nav class="nav nav-masthead justify-content-center float-md-end">
-                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="#">Features</a>
-                    <a class="nav-link fw-bold py-1 px-0" href="#">Contact</a>
-                </nav>
+
+    <nav class="navbar navbar-dark " style="background-color:#A9A9A9;" aria-label="Dark offcanvas navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
+                <i class="bi bi-list"></i>
+            </button>
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/">EQUIPMENT MANAGEMENT</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
+            <i class="bi bi-person-circle"></i>
+            </button>
+            <div class="offcanvas offcanvas-start text-white" style="background-color: 	#636257;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
+                <div class="offcanvas-header">
+                    <i class="bi bi-list"></i>
+                    <h5 class="offcanvas-title" id="offcanvasNavbarDarkLabel">MENU</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <hr>
+                <div class="offcanvas-body">
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" >EQUIPAMENTOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" >MANUTENÇÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" >USUÁRIOS</a>
+                </div>
             </div>
-        </header>
 
-        <main class="px-3">
-            <h1>Cover your page.</h1>
-            <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
-            <p class="lead">
-                <a href="#" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Learn more</a>
-            </p>
-        </main>
+        </div>
+    </nav>
 
-        <footer class="mt-auto text-white-50">
-            <p>Cover template for <a href="https://getbootstrap.com/" class="text-white">Bootstrap</a>, by <a href="https://twitter.com/mdo" class="text-white">@mdo</a>.</p>
-        </footer>
+
+    <!-- CONTEUDO A SER MODIFICADO -->
+    <div id='content'>
+        @yield('content')
     </div>
+
 
     <!-- CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <!-- JS -->
+    <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
+    <footer class="container">
+    <hr class="my-2">
+        <div class="py-4">
+            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: 	#63625F ; ">Back to top</a>
+        </div>
+    </footer>
 
 </body>
 
