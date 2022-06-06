@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\EquipamentoController;
+use App\Http\Controllers\RegistroController;
+// use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('app');
 });
+
+
+// CONTROLERS
+Route::resource('/equipamentos', EquipamentoController::class);
+Route::resource('/manutencoes', RegistroController::class);
+// Route::resource('/usuarios', UserController::class);

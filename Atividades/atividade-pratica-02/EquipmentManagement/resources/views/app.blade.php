@@ -71,7 +71,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-list"></i>
             </button>
-            <a style="font-size:1.4rem;" class="navbar-brand" href="/">EQUIPMENT MANAGEMENT</a>
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/">GERENCIADOR DE EQUIPAMENTOS</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
             <i class="bi bi-person-circle"></i>
             </button>
@@ -83,8 +83,8 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >EQUIPAMENTOS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >MANUTENÇÕES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.index') }}" >EQUIPAMENTOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.index') }}">MANUTENÇÕES</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" >USUÁRIOS</a>
                 </div>
             </div>
@@ -94,7 +94,7 @@
 
 
     <!-- CONTEUDO A SER MODIFICADO -->
-    <div id='content'>
+    <div id='content '>
         @yield('content')
     </div>
 
@@ -110,7 +110,7 @@
     <footer class="container">
     <hr class="my-2">
         <div class="py-4">
-            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: 	#63625F ; ">Back to top</a>
+            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #63625F ; border-color:#63625F">Back to top</a>
         </div>
     </footer>
 

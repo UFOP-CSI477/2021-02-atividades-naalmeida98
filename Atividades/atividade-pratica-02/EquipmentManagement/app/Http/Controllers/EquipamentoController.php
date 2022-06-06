@@ -15,7 +15,8 @@ class EquipamentoController extends Controller
      */
     public function index()
     {
-        //
+        $equipamentos = Equipamento::orderBy('nome')->paginate(20);
+        return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
 
     /**
