@@ -1,9 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\RegistroController;
-// use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +19,11 @@ Route::get('/', function () {
     return view('app');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
 
-// CONTROLERS
+require __DIR__.'/auth.php';
+
 Route::resource('/equipamentos', EquipamentoController::class);
 Route::resource('/manutencoes', RegistroController::class);
-// Route::resource('/usuarios', UserController::class);

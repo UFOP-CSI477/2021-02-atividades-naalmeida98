@@ -8,6 +8,11 @@ use App\Http\Requests\UpdateRegistroRequest;
 
 class RegistroController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +31,7 @@ class RegistroController extends Controller
      */
     public function create()
     {
-        //
+        return view('manutencoes.create');
     }
 
     /**
@@ -59,7 +64,7 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        //
+        return view('manutencoes.edit');
     }
 
     /**

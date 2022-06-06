@@ -6,7 +6,7 @@
 
 <h2>Lista de Equipamentos</h2>
 
-<a class="btn btn-primary p-3 m-3 w-30" style="background-color: #63625F; border-color:#63625F;" href="">Cadastrar</a>
+<a class="btn btn-primary p-3 m-3 w-30" style="background-color: #63625F; border-color:#63625F;" href="{{ route('equipamentos.create') }}">Cadastrar</a>
 
 <table class="table table-stripped table-hover">
 

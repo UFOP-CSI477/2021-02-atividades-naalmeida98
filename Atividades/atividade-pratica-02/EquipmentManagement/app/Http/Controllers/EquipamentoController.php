@@ -8,6 +8,11 @@ use App\Http\Requests\UpdateEquipamentoRequest;
 
 class EquipamentoController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except('index');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +31,7 @@ class EquipamentoController extends Controller
      */
     public function create()
     {
-        //
+        return view('equipamentos.create');
     }
 
     /**
@@ -59,7 +64,7 @@ class EquipamentoController extends Controller
      */
     public function edit(Equipamento $equipamento)
     {
-        //
+        return view('equipamentos.edit');
     }
 
     /**

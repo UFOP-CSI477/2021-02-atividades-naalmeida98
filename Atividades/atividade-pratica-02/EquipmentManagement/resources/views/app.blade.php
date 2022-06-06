@@ -72,9 +72,9 @@
                 <i class="bi bi-list"></i>
             </button>
             <a style="font-size:1.4rem;" class="navbar-brand" href="/">GERENCIADOR DE EQUIPAMENTOS</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#bag" aria-controls="offcanvasNavbarDark">
+            <a class="navbar-toggler" type="button" href="/login" type="a">
             <i class="bi bi-person-circle"></i>
-            </button>
+            </a>
             <div class="offcanvas offcanvas-start text-white" style="background-color: 	#636257;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
                     <i class="bi bi-list"></i>
@@ -85,6 +85,8 @@
                 <div class="offcanvas-body">
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.index') }}" >EQUIPAMENTOS</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.index') }}">MANUTENÇÕES</a>
+                    <!-- <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.edit', 1) }}" >edit EQUIPAMENTOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.edit', 1) }}">edit MANUTENÇÕES</a> -->
                     <a type="button" class="btn text-white btn-lg btn-block w-100" >USUÁRIOS</a>
                 </div>
             </div>
