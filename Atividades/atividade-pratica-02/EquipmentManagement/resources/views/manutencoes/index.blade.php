@@ -34,9 +34,23 @@
             <td>{{ $m->tipo }}</td>
             <td>{{ $m->descricao }}</td>
             <td>
-            <a href="{{ route('menutencoes.edit', $m->id) }}"><i class="bi bi-pencil-square"> </i>Editar</a>
-            <a href="{{ route('menutencoes.show', $m->id) }}"><i class="bi bi-binoculars"> </i>Excluir</a>
-        </td>
+            <div class="row g-2">
+                        <div class="col-sm-2">
+                            <a href="{{ route('manutencoes.edit', $m->id) }}" class="btn btn-primary">Editar</a>
+                        </div>
+                        <div class="col-sm-2">
+                            <form action="{{ route('manutencoes.destroy', $m->id) }}" method="post">
+
+                                @csrf
+                                @method('DELETE')
+
+                                <input type="submit" value="Excluir" class="btn btn-danger">
+
+                            </form>
+                        </div>
+
+                    </div>
+            </td>
 
         </tr>
 

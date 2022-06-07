@@ -42,7 +42,9 @@ class RegistroController extends Controller
      */
     public function store(StoreRegistroRequest $request)
     {
-        //
+        Registro::create($request->all());
+        // session()->flash('mensagem', 'Produto cadastrado com sucesso!');
+        return redirect()->route('manutencoes.index');
     }
 
     /**
@@ -64,7 +66,7 @@ class RegistroController extends Controller
      */
     public function edit(Registro $registro)
     {
-        return view('manutencoes.edit');
+        return view('manutencoes.edit', ['manutencao' => $registro]);
     }
 
     /**
@@ -76,7 +78,14 @@ class RegistroController extends Controller
      */
     public function update(UpdateRegistroRequest $request, Registro $registro)
     {
-        //
+        $registro->fill($request->all());
+        if ($registro->save()) {
+            session()->flash('mensagem', 'Manutenção atualizada com sucesso!');
+            return redirect()->route('manutencoes.index');
+        } else {
+            session()->flash('mensagem-erro', 'Erro na atualização da manutenção!');
+            return back()->withInput();
+        }
     }
 
     /**
@@ -87,6 +96,12 @@ class RegistroController extends Controller
      */
     public function destroy(Registro $registro)
     {
-        //
+        if($registro->delete()) {
+            session()->flash('mensagem', 'Mnutenção excluída com sucesso!');
+            return redirect()->route('manutencoes.index');
+        } else {
+            session()->flash('mensagem-erro', 'Erro na exclusão do manutenção!');
+            return back();
+        }
     }
 }

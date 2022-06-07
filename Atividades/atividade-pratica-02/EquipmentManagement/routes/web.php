@@ -19,6 +19,14 @@ Route::get('/', function () {
     return view('app');
 });
 
+Route::get('/users/index', function () {
+    return view('users.index');
+});
+
+Route::get('/users/create', function () {
+    return view('users.create');
+});
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

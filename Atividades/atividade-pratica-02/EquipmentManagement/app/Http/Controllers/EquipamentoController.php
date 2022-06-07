@@ -42,7 +42,9 @@ class EquipamentoController extends Controller
      */
     public function store(StoreEquipamentoRequest $request)
     {
-        //
+        Equipamento::create($request->all());
+        // session()->flash('mensagem', 'Produto cadastrado com sucesso!');
+        return redirect()->route('equipamentos.index');
     }
 
     /**
@@ -64,7 +66,7 @@ class EquipamentoController extends Controller
      */
     public function edit(Equipamento $equipamento)
     {
-        return view('equipamentos.edit');
+        return view('equipamentos.edit', ['equipamento' => $equipamento]);
     }
 
     /**
@@ -76,7 +78,14 @@ class EquipamentoController extends Controller
      */
     public function update(UpdateEquipamentoRequest $request, Equipamento $equipamento)
     {
-        //
+        $equipamento->fill($request->all());
+        if ($equipamento->save()) {
+            session()->flash('mensagem', 'Equipamento atualizado com sucesso!');
+            return redirect()->route('equipamentos.index');
+        } else {
+            session()->flash('mensagem-erro', 'Erro na atualização do Equipamento!');
+            return back()->withInput();
+        }
     }
 
     /**
@@ -87,6 +96,12 @@ class EquipamentoController extends Controller
      */
     public function destroy(Equipamento $equipamento)
     {
-        //
+        if($equipamento->delete()) {
+            session()->flash('mensagem', 'Equipamento excluído com sucesso!');
+            return redirect()->route('equipamentos.index');
+        } else {
+            session()->flash('mensagem-erro', 'Erro na exclusão do equipamento!');
+            return back();
+        }
     }
 }

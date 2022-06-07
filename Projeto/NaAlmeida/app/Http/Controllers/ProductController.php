@@ -37,10 +37,6 @@ class ProductController extends Controller
      */
     public function store(StoreProductRequest $request)
     {
-        // dd($request);
-        // $category = Category::where('name', "ring")->get();
-        // json_encode($category);
-        // $request->category_id = 1;
         Product::create($request->all());
         session()->flash('mensagem', 'Produto cadastrado com sucesso!');
         return redirect()->route('products.create');

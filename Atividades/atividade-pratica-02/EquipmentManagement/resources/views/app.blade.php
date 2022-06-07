@@ -87,7 +87,7 @@
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.index') }}">MANUTENÇÕES</a>
                     <!-- <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.edit', 1) }}" >edit EQUIPAMENTOS</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.edit', 1) }}">edit MANUTENÇÕES</a> -->
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >USUÁRIOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="/users/index">USUÁRIOS</a>
                 </div>
             </div>
 

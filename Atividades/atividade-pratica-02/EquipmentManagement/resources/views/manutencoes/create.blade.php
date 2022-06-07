@@ -11,41 +11,32 @@
                 @csrf
 
                 <div class="row g-3">
-                    <div class="col-sm-12">
-                        <label for="category_id" class="form-label">Categoria</label>
-                        <select class="form-select" id="category_id" name="category_id" >
+                    <div class="col-sm-6">
+                        <label for="equipamento_id" class="form-label">Nome do Equipamento</label>
+                        <select class="form-select" id="equipamento_id" name="equipamento_id" >
                             <option value="select">Selecione</option>
-                            <option value="1">Anel</option>
-                            <option value="2">Brinco</option>
-                            <option value="3">Cordão</option>
-                            <option value="4">Pingente</option>
-                            <option value="5">Pulseira</option>
                         </select>
                     </div>
-
-                    <div class="col-sm-8">
-                        <label for="name" class="form-label">Nome</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="" value="" required="">
-                    </div>
-
-                    <div class="col-sm-4">
-                        <label for="code" class="form-label">Código</label>
-                        <input type="text" class="form-control" id="code" name="code" placeholder="" value="" required="">
+                    <div class="col-6">
+                        <label for="datalimite" class="form-label">Data Limite</label>
+                        <input type="date" class="form-control" id="datalimite" name="datalimite" required=""></input>
                     </div>
 
                     <div class="col-12">
-                        <label for="description" class="form-label">Descrição</label>
-                        <textarea type="text" class="form-control" id="description" name="description" required=""></textarea>
+                        <label for="descricao" class="form-label">Descrição</label>
+                        <textarea type="text" class="form-control" id="descricao" name="descricao" required=""></textarea>
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="value_av" class="form-label">Valor à vista (R$)</label>
-                        <input type="number" class="form-control" id="value_av" name="value_av" required="">
+                    <div class="col-sm-8">
+                        <label for="tipo" class="form-label">Tipo da manutenção</label>
+                        <select class="form-select" id="tipo" name="tipo" >
+                            <option value="select">Selecione</option>
+                        </select>
                     </div>
 
-                    <div class="col-md-4">
-                        <label for="value_ap" class="form-label">Valor à prazo (R$)</label>
-                        <input type="number" class="form-control" id="value_ap" name="value_ap" required="">
+                    <div class="col-sm-4">
+                        <label for="user_id" class="form-label">Usuário</label>
+                        <input disabled type="text" class="form-control" id="user_id" name="user_id" placeholder="" value="" required="">
                     </div>
 
                 </div>
