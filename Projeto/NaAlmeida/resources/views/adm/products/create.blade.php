@@ -46,19 +46,19 @@
                             console.log("value_av", value_av);
                             console.log("porcentage", porcentage);
                             value_ap = value_av * porcentage;
-                            document.getElementById("value_ap").value = value_ap;
+                            document.getElementById("value_ap").value = value_ap.toFixed(2);
                         }
                     </script>
 
                     <div class="col-md-4">
                         <label for="value_av" class="form-label">Valor à vista (R$)</label>
-                        <input type="number" class="form-control" id="value_av" name="value_av" required="">
+                        <input type="number" class="form-control" step=0.01 id="value_av" name="value_av" required="">
                     </div>
 
-                    <!-- <div class="col-md-3">
+                    <div class="col-md-3">
                         <label for="porcentage" class="form-label">% - à prazo</label>
                         <input type="number" class="form-control" id="porcentage" placeholder="" required="" value="1.1">
-                    </div> -->
+                    </div>
 
                     <div class="col-md-1">
                         <a onclick="calculaValueAp()" class=" btn btn-lg m-2" style="background-color: #FA6699;">
@@ -68,7 +68,7 @@
 
                     <div class="col-md-4">
                         <label for="value_ap" class="form-label">Valor à prazo (R$)</label>
-                        <input type="number" class="form-control" id="value_ap" name="value_ap" required="">
+                        <input type="number" class="form-control" step=0.01 id="value_ap" name="value_ap" required="">
                     </div>
 
                 </div>

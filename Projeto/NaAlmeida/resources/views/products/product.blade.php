@@ -5,59 +5,39 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-lg-2 align-items-stretch py-3">
         <div class="col-sm-8 row row-cols-1">
-            <!-- <img src="{{ asset('images/image04.jpg') }}" alt="image03" width="100%">
-
-            <div style="background-color: black ;">
-                <img src="" alt="">
-            </div>
-            <div style="background-color: pink;">
-                <img src="" alt="">
-            </div> -->
-
             <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    <button style="background-color: #D16D6F" type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button style="background-color: #D16D6F" type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button style="background-color: #D16D6F" type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="{{ asset('images/image04.jpg') }}" alt="image01" class="imagesBook">
+                        <img src="/images/products/<?php echo $product->code ?>_1.jpeg" alt="image01" class="imagesBook">
                         <div class="container">
                             <div class="carousel-caption text-start">
-                                <!-- <h1>COMPRE E GANHE</h1>
-                        <p>uma maleta exclusiva da Rommanel</p>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Sign up today</a></p> -->
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image05.jpg') }}" alt="image02" class="imagesBook">
+                        <img src="/images/products/<?php echo $product->code ?>_2.jpeg" alt="image02" class="imagesBook">
                         <div class="container">
-                            <div class="carousel-caption">
-                                <!-- <p></p>
-                        <h1>Joias a partir de R$ 43,00</h1>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Learn more</a></p> -->
-                            </div>
+                            <div class="carousel-caption"></div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="{{ asset('images/image03.jpg') }}" alt="image03" class="imagesBook">
+                        <img src="/images/products/<?php echo $product->code ?>_3.jpeg"  alt="image03" class="imagesBook">
                         <div class="container">
-                            <div class="carousel-caption text-end">
-                                <!-- <h1>Receba no conforto da sua casa</h1>
-                        <p></p>
-                        <p><a class="btn btn-lg btn-primary" style="background-color: #FA6699; border-color:#FA6699" href="#">Browse gallery</a></p> -->
-                            </div>
+                            <div class="carousel-caption text-end"></div>
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button style="background-color: #D16D6F" class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+                    <span  class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button style="background-color: #D16D6F" class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+                    <span  class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
@@ -80,20 +60,20 @@
                     <div class="px-4">
                         <a class="btn text-white p-1" type="button" onclick="minusQtd()">
                             <div class="d-flex flex-wrap justify-content-center">
-                                <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
+                                <i class="bi bi-dash-circle-fill" style="color: #D16D6F;"></i>
                             </div>
                         </a>
                         <input type="text" name="qtd" id="qtdProduct" value="{{ $product->qtd_cart }}" class="inputQTD" >
 
                         <a class="btn text-white p-1" type="button" onclick="plusQtd()">
                             <div class="d-flex flex-wrap justify-content-center">
-                                <i class="bi bi-plus-circle-fill" style="color: #FA6699;"></i>
+                                <i class="bi bi-plus-circle-fill" style="color: #D16D6F;"></i>
                             </div>
                         </a>
                     </div>
 
                     <script>
-                        function redirect() {
+                        function addCart() {
                         id = "<?php echo $product->id ?>";
                         console.log(id);
                         qtd = document.getElementById("qtdProduct").value;
@@ -105,9 +85,9 @@
 
                     <div class="py-3">
                         <a class="btn text-white btn-lg btn-block w-100" id="btnAddBag" type="button"
-                            onclick="redirect()" >
+                            onclick="addCart()" >
                             <div class="d-flex flex-wrap justify-content-center">
-                                <i class="bi bi-bag-plus-fill" style="background-color: #FA6699; font-size:1rem;"> CARRINHO</i>
+                                <i class="bi bi-bag-plus-fill" style="background-color: #F06E7F; font-size:1rem;"> CARRINHO</i>
                             </div>
                         </a>
                     </div>

@@ -90,7 +90,7 @@
 
                         <div class="col-12">
                             <label for="cpf" class="form-label">CPF <span class="text-muted"></span></label>
-                            <input type="text" class="form-control" id="cpf" placeholder="you@example.com">
+                            <input type="text" class="form-control" id="cpf" placeholder="111.111.111-11">
                             <div class="invalid-feedback">
                                 Please enter a valid cpf for shipping updates.
                             </div>
@@ -141,7 +141,7 @@
 
                             <div class="col-9">
                                 <label for="address2" class="form-label">Bairro/Avenida<span class="text-muted"></span></label>
-                                <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                                <input type="text" class="form-control" id="address2" >
                             </div>
 
                             <div class="col-sm-3">
@@ -194,11 +194,11 @@
                     <div class="my-3">
                         <div class="form-check">
                             <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
-                            <label class="form-check-label" for="credit">Crédito - ( R$ {{ $value_total_ap }} )</label>
+                            <label class="form-check-label" for="credit">Crédito - ( R$ {{ $value_total_ap }}0 )</label>
                         </div>
                         <div class="form-check">
                             <input id="pix" name="paymentMethod" type="radio" class="form-check-input" required="">
-                            <label class="form-check-label" for="pix">Pix - ( R$ {{ $value_total_av }} )</label>
+                            <label class="form-check-label" for="pix">Pix - ( R$ {{ $value_total_av }}.00 )</label>
                         </div>
                     </div>
 

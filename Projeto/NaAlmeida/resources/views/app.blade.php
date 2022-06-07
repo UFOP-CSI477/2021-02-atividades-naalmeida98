@@ -66,7 +66,7 @@
 <body>
 
 
-    <nav class="navbar navbar-dark " style="background-color:#FA6699;" aria-label="Dark offcanvas navbar">
+    <nav class="navbar navbar-dark " style="background-color:#FF829F;" aria-label="Dark offcanvas navbar">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-list"></i>
@@ -132,29 +132,29 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <img src="{{ asset('images/image04.jpg') }}" alt="product" width="80" height="80">
+                                        <img src="/images/products/<?php echo data_get($product,'code')?>_1.jpeg" alt="product" width="100" height="100">
                                     </div>
                                     <div class="px-4">
                                         <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="minusQtdBag()">
                                             <div class="">
-                                                <i class="bi bi-dash-circle-fill" style="color: #FA6699;"></i>
+                                                <i class="bi bi-dash-circle-fill" style="color: #D16D6F;"></i>
                                             </div>
                                         </a>
                                         <input type="text" name="qtd" id="{{ data_get($product,'id') }}" value="{{data_get($product,'qtd')}}" class="inputQTD">
                                         <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="plusQtdBag()">
                                             <div class="">
-                                                <i class="bi bi-plus-circle-fill" style="color: #FA6699;"></i>
+                                                <i class="bi bi-plus-circle-fill" style="color: #D16D6F;"></i>
                                             </div>
                                         </a>
                                     </div>
                                     <div>
                                         <p class="text-muted">
-                                            {{data_get($product,'value_av')}}<br>
+                                            R$ {{data_get($product,'value_av')}}.00<br>
                                             à vista
                                         </p>
 
                                         <p class="text-muted" style="font-size: 0.7rem;">
-                                            {{data_get($product,'value_ap')}}<br> à prazo
+                                            R$ {{data_get($product,'value_ap')}}0<br> à prazo
                                         </p>
 
                                         @php
@@ -164,7 +164,7 @@
 
                                     </div>
                                 </div>
-                                <a class="bi bi-trash-fill" style="color: #FA6699;" href="/shoppings/1/remove/1"></a>
+                                <a class="bi bi-trash-fill" style="color:  #D16D6F;" href="/shoppings/1/remove/1"></a>
                             </div>
                         </div>
                     </div>
@@ -176,9 +176,9 @@
                             <div class="card-body">
                                 <p class="card-text">Total</p>
                                 <div>
-                                    <p class="text-muted">{{$value_total_av}} à vista</p>
+                                    <p class="text-muted">R$ {{$value_total_av}}.00 à vista</p>
                                     <p class="text-muted" style="font-size: 0.7rem;">
-                                        {{$value_total_ap}} à prazo
+                                        R$ {{$value_total_ap}}0 à prazo
                                     </p>
                                 </div>
                             </div>
@@ -216,10 +216,10 @@
     <footer class="container">
     <hr class="my-2">
         <div class="py-4">
-            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #F06E7F  ; ">Back to top</a>
+            <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #D16D6F  ; ">Back to top</a>
 
-            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color:#F06E7F ; "><i class="bi bi-instagram p-2" ></i></a>
-            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color: #F06E7F ; "><i class="bi bi-whatsapp p-2"></i></a>
+            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color:#D16D6F ; "><i class="bi bi-instagram p-2" ></i></a>
+            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color: #D16D6F ; "><i class="bi bi-whatsapp p-2"></i></a>
 
         </div>
     </footer>

@@ -19,7 +19,7 @@ Route::get('/checkout', function () {
 //ADICIONAR NO CARRINHO DE COMPRAS
 Route::get('/shoppings/add/{id}/bag/{qtd}', function($id, $qtd)
 {
-
+    // Session::flush();
     $product = Product::find($id);
     $session = session('shoppings_list');
 
