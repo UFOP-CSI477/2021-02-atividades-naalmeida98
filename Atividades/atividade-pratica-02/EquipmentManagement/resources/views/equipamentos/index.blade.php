@@ -6,7 +6,9 @@
 
     <h2>Lista de Equipamentos</h2>
 
+    @if(Auth::check())
     <a class="btn btn-primary p-3 m-3 w-30" style="background-color: #63625F; border-color:#63625F;" href="{{ route('equipamentos.create') }}">Cadastrar</a>
+    @endif
 
     <table class="table table-stripped table-hover">
 
@@ -14,7 +16,9 @@
             <tr>
                 <th>Código</th>
                 <th>Nome</th>
+                @if(Auth::check())
                 <th>Ação</th>
+                @endif
             </tr>
         </thead>
 
@@ -25,6 +29,7 @@
             <tr>
                 <td>{{ $e->id }}</td>
                 <td>{{ $e->nome }}</td>
+                @if(Auth::check())
                 <td>
                     <div class="row g-2">
                         <div class="col-sm-2">
@@ -40,10 +45,9 @@
 
                             </form>
                         </div>
-
                     </div>
-
                 </td>
+                @endif
 
             </tr>
 

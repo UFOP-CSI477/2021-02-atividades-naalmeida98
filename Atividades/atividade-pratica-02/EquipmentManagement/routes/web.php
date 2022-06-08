@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EquipamentoController;
 use App\Http\Controllers\RegistroController;
+use App\Models\Equipamento;
+use App\Models\Registro;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,15 +23,21 @@ Route::get('/', function () {
 });
 
 Route::get('/users/index', function () {
-    return view('users.index');
-});
+    $users = User::orderBy('name')->paginate(20);
+    return view('users.index', ['users' => $users]);
+})->middleware(['auth']);
 
 Route::get('/users/create', function () {
     return view('users.create');
-});
+})->middleware(['auth']);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
+Route::get('/manutencoes/create_form', function () {
+    $equipamentos = Equipamento::get();
+    return view('manutencoes.create_form', ['equipamentos' => $equipamentos]);
+})->middleware(['auth']);
+
+Route::get('/app', function () {
+    return view('app');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';

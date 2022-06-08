@@ -71,10 +71,6 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu" aria-controls="offcanvasNavbarDark">
                 <i class="bi bi-list"></i>
             </button>
-            <a style="font-size:1.4rem;" class="navbar-brand" href="/">GERENCIADOR DE EQUIPAMENTOS</a>
-            <a class="navbar-toggler" type="button" href="/login" type="a">
-            <i class="bi bi-person-circle"></i>
-            </a>
             <div class="offcanvas offcanvas-start text-white" style="background-color: 	#636257;" tabindex="-1" id="menu" aria-labelledby="offcanvasNavbarDarkLabel">
                 <div class="offcanvas-header">
                     <i class="bi bi-list"></i>
@@ -83,14 +79,43 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.index') }}" >EQUIPAMENTOS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.index') }}">EQUIPAMENTOS</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.index') }}">MANUTENÇÕES</a>
-                    <!-- <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.edit', 1) }}" >edit EQUIPAMENTOS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.edit', 1) }}">edit MANUTENÇÕES</a> -->
+                    @if(Auth::check())
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="/users/index">USUÁRIOS</a>
+                    @endif
                 </div>
             </div>
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/">GERENCIADOR DE EQUIPAMENTOS</a>
 
+            @if(Auth::check())
+            <x-dropdown align="right" width="48">
+                <x-slot name="trigger">
+                    <button class="flex items-center text-sm font-medium text-white hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
+                        <div>{{ Auth::user()->name }}</div>
+                        <div class="ml-1">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                    </button>
+                </x-slot>
+
+                <x-slot name="content">
+                    <!-- Authentication -->
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                        <x-dropdown-link :href="route('logout')" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-dropdown-link>
+                    </form>
+                </x-slot>
+            </x-dropdown>
+            @else
+                <!-- Login -->
+                <a href="{{ route('login') }}" class="btn btn-secundary text-white me-2">Login</a>
+            @endif
         </div>
     </nav>
 
@@ -110,7 +135,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
     <footer class="container">
-    <hr class="my-2">
+        <hr class="my-2">
         <div class="py-4">
             <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #63625F ; border-color:#63625F">Back to top</a>
         </div>
