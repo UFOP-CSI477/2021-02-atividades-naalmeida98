@@ -55,8 +55,9 @@ E no escopo de requisitos não funcionais, somente não foi coberto:
 ### 3. Outras funcionalidades implementadas
 <!-- Descrever as funcionalidades implementas além daquelas que foram previstas, caso se aplique.  -->
     
-    O projeto seguiu o escopo definido previamente, portanto, não teve funcionalidades adicionais.
+    Foi adicionado uma interface de administração para o cadastro dos produtos. Confira abaixo.
 
+![Screenshot](createProduct.PNG)
 
 ### 4. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
@@ -68,7 +69,7 @@ E no escopo de requisitos não funcionais, somente não foi coberto:
 ### 5. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
 
-Para realizar a instalação do software, deve-se clonar o repositório na máquina. 
+Para realizar a instalação do sistema deve-se clonar o repositório na máquina. 
 
 
 Além disso, será necessário a utilização do software XAMPP para ligar o servidor do Banco de Dados. Portanto, caso não tenha instalado, segue o link abaixo para a instalação:
@@ -90,6 +91,7 @@ Por fim, acesse o link apresentado no terminal. Veja adiante.
 
   ![Screenshot](linkTerminal.PNG)
 
+Pronto, você obterá acesso ao sistema.
 
   ![Screenshot](web.PNG)
 
