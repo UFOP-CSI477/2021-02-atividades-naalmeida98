@@ -62,9 +62,9 @@ E no escopo de requisitos não funcionais, somente não foi coberto:
 ### 4. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
 
-    Ressalta-se, em primeiro plano, a maior dificuldade encontrada foi manipular o carrinho de compras, uma vez que para guardar as informações dos produtos escolhidos de maneira temporária, ou seja, sem persistir no banco de dados, foi necessário utilizar a Session do navegador para guardar as informações dos produtos escolhidos pelos usuários, e, infelizmente, essa ferramenta não possui muitos recursos de manipulação. Dessa maneira, para a execução de adição e remoção de objetos dentro do carrinho de compras foi necessária algumas pesquisas e análises para se obter uma solução mais simples. 
+Ressalta-se, em primeiro plano, a maior dificuldade encontrada foi manipular o carrinho de compras, uma vez que para guardar as informações dos produtos escolhidos de maneira temporária, ou seja, sem persistir no banco de dados, foi necessário utilizar a Session do navegador para guardar as informações dos produtos escolhidos pelos usuários, e, infelizmente, essa ferramenta não possui muitos recursos de manipulação. Dessa maneira, para a execução de adição e remoção de objetos dentro do carrinho de compras foi necessária algumas pesquisas e análises para se obter uma solução mais simples. 
 
-    Em segundo lugar, a maior dificuldade obtida foi implementar as imagens dos produtos de forma que ficassem responsivas tanto para os formatos desktop e mobile. 
+Em segundo lugar, a maior dificuldade obtida foi implementar as imagens dos produtos de forma que ficassem responsivas tanto para os formatos desktop e mobile. 
 
 ### 5. Instruções para instalação e execução
 <!-- Descrever o que deve ser feito para instalar (ou baixar) a aplicação, o que precisa ser configurando (parâmetros, banco de dados e afins) e como executá-la. -->
