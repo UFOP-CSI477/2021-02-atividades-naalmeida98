@@ -27,7 +27,7 @@
                             <h6 class="my-0">{{data_get($product,'name')}}</h6>
                             <small class="text-muted">{{data_get($product,'qtd')}} unidades</small>
                         </div>
-                        <span class="text-muted">R$ {{data_get($product,'value_ap')}} ap</span>
+                        <span class="text-muted">R$ {{data_get($product,'value_ap')}}0 ap</span>
                     </li>
 
                     @php
@@ -49,14 +49,14 @@
                             </small>
                         </div>
 
-                        <strong>{{ $value_total_ap }}</strong>
+                        <strong>R$ {{ $value_total_ap }}0</strong>
                     </li>
                     <li class="list-group-item d-flex justify-content-between bg-light">
                         <div class="text-success">
                             <h6 class="my-0">Desconto à vista</h6>
                             <!-- <small>EXAMPLECODE</small> -->
                         </div>
-                        <span class="text-success">R$ {{ $value_total_av }}</span>
+                        <span class="text-success">R$ {{ $value_total_av }}.00</span>
                     </li>
 
                 </ul>
@@ -154,24 +154,28 @@
 
                             <div class="col-md-4">
                                 <label for="state" class="form-label">Estado</label>
-                                <select class="form-select" id="state" required="">
+                                 <input type="text" class="form-control" id="estado" placeholder="" value="" required="">
+
+                                <!-- <select class="form-select" id="state" required="">
                                     <option value="">Choose...</option>
-                                    <option>California</option>
+                                    <option></option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid state.
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="col-md-5">
                                 <label for="country" class="form-label">Cidade</label>
-                                <select class="form-select" id="country" required="">
+                                <input type="text" class="form-control" id="cidade" placeholder="" value="" required="">
+
+                                <!-- <select class="form-select" id="country" required="">
                                     <option value="">Choose...</option>
                                     <option>United States</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please select a valid country.
-                                </div>
+                                </div> -->
                             </div>
 
                             <div class="col-md-3">
@@ -204,7 +208,7 @@
 
                     <hr class="my-4">
 
-                    <button class="w-100 btn btn-primary btn-lg my-5" type="submit" style="background-color: #FA6699; border-color: #FA6699;">Finalizar</button>
+                    <a href="/finished" class="w-100 btn btn-primary btn-lg my-5" type="submit" style="background-color: #FA6699; border-color: #FA6699;">Finalizar</a>
                 </form>
             </div>
         </div>

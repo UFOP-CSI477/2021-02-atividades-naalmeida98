@@ -26,12 +26,12 @@
                     <div class="card-body">
                         <p class="card-text">{{ $product->name }}</p>
                         <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
+                            <!-- <div class="btn-group">
                                 <button type="button" style="border-color:#FA6699; background-color: #FA6699" onclick="addCart()" class="btn btn-sm btn-outline-secondary">
                                     <i class="bi bi-bag-plus-fill" style="background-color: #FA6699;"></i>
                                 </button>
-                                <!-- <a type="button" href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-outline-secondary">Edit</a> -->
-                            </div>
+                                <a type="button" href="{{ route('products.show', $product->id) }}" class="btn btn-sm btn-outline-secondary">Edit</a>
+                            </div> -->
                             <small class="text-muted">R$ {{ $product->value_av }},00</small>
                         </div>
                     </div>

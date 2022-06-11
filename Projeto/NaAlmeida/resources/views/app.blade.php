@@ -88,7 +88,7 @@
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 3) }}">CORDÕES</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 4) }}">PINGENTES</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('categories.show', 5) }}">PULSEIRAS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('products.create') }}">CADASTRAR</a>
+                    <!-- <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('products.create') }}">CADASTRAR</a> -->
                 </div>
             </div>
             <div class="offcanvas offcanvas-end text-white" style="background-color: #F06E7F;" tabindex="-1" id="bag" aria-labelledby="offcanvasNavbarDarkLabel">
@@ -132,7 +132,7 @@
                                 </div>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <img src="/images/products/<?php echo data_get($product,'code')?>_1.jpeg" alt="product" width="100" height="100">
+                                        <img src="/images/products/<?php if(data_get($product,'code') != null){ echo data_get($product,'code'); } ?>_1.jpeg" alt="product" width="100" height="100">
                                     </div>
                                     <div class="px-4">
                                         <a class="btn text-white p-1 d-flex flex-wrap justify-content-center" type="button" onclick="minusQtdBag()">
@@ -164,7 +164,7 @@
 
                                     </div>
                                 </div>
-                                <a class="bi bi-trash-fill" style="color:  #D16D6F;" href="/shoppings/1/remove/1"></a>
+                                <a class="bi bi-trash-fill" style="color:  #D16D6F;" href="/shoppings/<?php echo data_get($product,'id') ?>/remove"></a>
                             </div>
                         </div>
                     </div>
@@ -219,7 +219,7 @@
             <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #D16D6F  ; ">Back to top</a>
 
             <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color:#D16D6F ; "><i class="bi bi-instagram p-2" ></i></a>
-            <a class="btn text-white btn-lg btn-block w-70" href="https://www.instagram.com/naalmeidaoficial/" style="background-color: #D16D6F ; "><i class="bi bi-whatsapp p-2"></i></a>
+            <a class="btn text-white btn-lg btn-block w-70" href="https://wa.me/message/DOCNGSE7ODWLB1" style="background-color: #D16D6F ; "><i class="bi bi-whatsapp p-2"></i></a>
 
         </div>
     </footer>

@@ -44,14 +44,13 @@ Route::get('/shoppings/add/{id}/bag/{qtd}', function($id, $qtd)
 });
 
 //REMOVER CARRINHO DE COMPRAS
-Route::get('/shoppings/{idProduct}/remove/{idCart}', function($idProduct,$idCart)
+Route::get('/shoppings/{idProduct}/remove', function($idProduct)
 {
     $product = Product::find($idProduct);
-
     $session = session('shoppings_list');
     $session = array_values($session);
     for($i=0; $i < count($session); $i++){
-        if($session[$i]["id"] == $idCart){
+        if($session[$i]["id"] == $idProduct){
             unset($session[$i]);
             $session = array_values($session);
         }
@@ -61,6 +60,11 @@ Route::get('/shoppings/{idProduct}/remove/{idCart}', function($idProduct,$idCart
     Session::put('shoppings_list', $session);
 
     return view('products.product', ['product' => $product]);
+});
+
+Route::get('/finished', function()
+{
+    return view('finished_shopping');
 });
 
 

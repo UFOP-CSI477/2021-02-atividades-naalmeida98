@@ -50,12 +50,12 @@
                         }
                     </script>
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="value_av" class="form-label">Valor à vista (R$)</label>
                         <input type="number" class="form-control" step=0.01 id="value_av" name="value_av" required="">
                     </div>
 
-                    <div class="col-md-3">
+                    <!-- <div class="col-md-3">
                         <label for="porcentage" class="form-label">% - à prazo</label>
                         <input type="number" class="form-control" id="porcentage" placeholder="" required="" value="1.1">
                     </div>
@@ -64,9 +64,9 @@
                         <a onclick="calculaValueAp()" class=" btn btn-lg m-2" style="background-color: #FA6699;">
                             <i class="bi bi-arrow-right-circle-fill"></i>
                         </a>
-                    </div>
+                    </div> -->
 
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <label for="value_ap" class="form-label">Valor à prazo (R$)</label>
                         <input type="number" class="form-control" step=0.01 id="value_ap" name="value_ap" required="">
                     </div>
