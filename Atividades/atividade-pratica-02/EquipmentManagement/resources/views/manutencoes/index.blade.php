@@ -14,12 +14,12 @@
 
         <thead>
             <tr>
-                <th>Código</th>
+                <th>Cod</th>
                 <th>Data Limite</th>
-                <th>Nome do Equipamento</th>
-                <th>Nome do Usuário</th>
+                <th>Equipamento</th>
+                <th>Usuário</th>
                 <th>Tipo da Manutenção</th>
-                <th>Descrição da manutenção/problema</th>
+                <th>Descrição do problema</th>
                 @if(Auth::check())
                 <th>Ação</th>
                 @endif
@@ -33,17 +33,17 @@
             <tr>
                 <td>{{ $m->id }}</td>
                 <td>{{ $m->datalimite }}</td>
-                <td>{{ $m->nome }}</td>
-                <td>{{ $m->nome_user }}</td>
+                <td>{{ $m->equipamento->nome }}</td>
+                <td>{{ $m->user->name }}</td>
                 <td>{{ $m->tipo }}</td>
                 <td>{{ $m->descricao }}</td>
                 @if(Auth::check())
                 <td>
-                    <div class="row g-2">
-                        <div class="col-sm-2">
+                    <div class="d-flex flex-row g-2">
+                        <div class="p-2">
                             <a href="{{ route('manutencoes.edit', $m->id) }}" class="btn btn-primary">Editar</a>
                         </div>
-                        <div class="col-sm-2">
+                        <div class="p-2">
                             <form action="{{ route('manutencoes.destroy', $m->id) }}" method="post">
 
                                 @csrf

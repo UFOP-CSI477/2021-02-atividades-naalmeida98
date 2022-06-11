@@ -136,9 +136,9 @@
 
     <footer class="container">
         <hr class="my-2">
-        <div class="py-4">
+        <!-- <div class="py-4">
             <a class="btn text-white btn-lg btn-block w-70 float-end" href="#" style="background-color: #63625F ; border-color:#63625F">Back to top</a>
-        </div>
+        </div> -->
     </footer>
 
 </body>

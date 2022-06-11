@@ -19,7 +19,7 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    return view('app');
+    return view('home');
 });
 
 Route::get('/users/index', function () {
@@ -35,6 +35,19 @@ Route::get('/manutencoes/create_form', function () {
     $equipamentos = Equipamento::get();
     return view('manutencoes.create_form', ['equipamentos' => $equipamentos]);
 })->middleware(['auth']);
+
+// Route::get('/manutencoes/index2', function () {
+//     $manutencoes = Registro::orderBy('datalimite')->paginate(20);
+//     foreach($manutencoes as $m){
+//         $user = User::where('id', $m->user_id)->get();
+//         $equipamento = Equipamento::where('id', $m->equipamento_id)->get();
+
+//         $m->user_nome = $user['name'];
+//         $m->equipamento_nome = $equipamento['nome'];
+//     }
+
+//     return view('manutencoes.index', ['manutencoes' => $manutencoes]);
+// })->middleware(['auth']);
 
 Route::get('/app', function () {
     return view('app');

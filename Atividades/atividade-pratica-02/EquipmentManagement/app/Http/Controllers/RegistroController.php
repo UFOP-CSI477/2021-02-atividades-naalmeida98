@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Registro;
 use App\Http\Requests\StoreRegistroRequest;
 use App\Http\Requests\UpdateRegistroRequest;
+use App\Models\Equipamento;
+use App\Models\User;
 
 class RegistroController extends Controller
 {
@@ -20,7 +22,9 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        $manutencoes = Registro::orderBy('datalimite')->paginate(20);
+        // $manutencoes = Registro::orderBy('datalimite')->paginate(20);
+        $manutencoes = Registro::get();
+
         return view('manutencoes.index', ['manutencoes' => $manutencoes]);
     }
 
