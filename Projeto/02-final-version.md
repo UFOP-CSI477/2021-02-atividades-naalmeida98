@@ -54,11 +54,13 @@ E no escopo de requisitos não funcionais, somente não foi coberto:
 
 ### 3. Outras funcionalidades implementadas
 <!-- Descrever as funcionalidades implementas além daquelas que foram previstas, caso se aplique.  -->
+    
     O projeto seguiu o escopo definido previamente, portanto, não teve funcionalidades adicionais.
 
 
 ### 4. Principais desafios e dificuldades
 <!-- Descrever os principais desafios encontrados no desenvolvimento do trabalho, quais foram as dificuldades e como elas foram superadas e resolvidas. -->
+
     Ressalta-se, em primeiro plano, a maior dificuldade encontrada foi manipular o carrinho de compras, uma vez que para guardar as informações dos produtos escolhidos de maneira temporária, ou seja, sem persistir no banco de dados, foi necessário utilizar a Session do navegador para guardar as informações dos produtos escolhidos pelos usuários, e, infelizmente, essa ferramenta não possui muitos recursos de manipulação. Dessa maneira, para a execução de adição e remoção de objetos dentro do carrinho de compras foi necessária algumas pesquisas e análises para se obter uma solução mais simples. 
 
     Em segundo lugar, a maior dificuldade obtida foi implementar as imagens dos produtos de forma que ficassem responsivas tanto para os formatos desktop e mobile. 
@@ -76,7 +78,7 @@ Além disso, será necessário a utilização do software XAMPP para ligar o ser
 Após instalado, ative as opções Apache e MySql do XAMPP, conforme a figura a seguir.
 
 
-  ![Screenshot](XAMPP.png)
+  ![Screenshot](XAMPP.PNG)
 
 
 Em seguida, acesse pelo terminal a pasta do projeto e execute o seguinte comando:
@@ -86,9 +88,9 @@ Em seguida, acesse pelo terminal a pasta do projeto e execute o seguinte comando
 Por fim, acesse o link apresentado no terminal. Veja adiante.
 
 
-  ![Screenshot](linkTerminal.png)
+  ![Screenshot](linkTerminal.PNG)
 
 
-  ![Screenshot](web.png)
+  ![Screenshot](web.PNG)
 
 
