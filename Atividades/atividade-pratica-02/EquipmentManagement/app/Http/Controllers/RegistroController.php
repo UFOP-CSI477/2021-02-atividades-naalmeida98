@@ -22,8 +22,8 @@ class RegistroController extends Controller
      */
     public function index()
     {
-        // $manutencoes = Registro::orderBy('datalimite')->paginate(20);
-        $manutencoes = Registro::get();
+        $manutencoes = Registro::orderBy('datalimite')->paginate(20);
+        // $manutencoes = Registro::get();
 
         return view('manutencoes.index', ['manutencoes' => $manutencoes]);
     }

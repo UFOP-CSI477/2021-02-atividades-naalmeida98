@@ -29,13 +29,23 @@
         <tbody>
 
             @foreach($manutencoes as $m)
+            @php
+                $tipo_name='';
+                if($m->tipo == 1){
+                    $tipo_name = 'Preventiva';
+                }elseif($m->tipo == 2){
+                    $tipo_name = 'Corretiva';
+                }else{
+                    $tipo_name = 'Urgente';
+                }
+            @endphp
 
             <tr>
                 <td>{{ $m->id }}</td>
                 <td>{{ $m->datalimite }}</td>
                 <td>{{ $m->equipamento->nome }}</td>
                 <td>{{ $m->user->name }}</td>
-                <td>{{ $m->tipo }}</td>
+                <td>{{ $tipo_name }}</td>
                 <td>{{ $m->descricao }}</td>
                 @if(Auth::check())
                 <td>
