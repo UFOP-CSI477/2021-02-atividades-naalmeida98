@@ -82,11 +82,18 @@
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('equipamentos.index') }}">EQUIPAMENTOS</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('manutencoes.index') }}">MANUTENÇÕES</a>
                     @if(Auth::check())
+
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="/rel_equip">MANUTENÇÕES POR EQUIPAMENTOS</a>
                     <a type="button" class="btn text-white btn-lg btn-block w-100" href="/users/index">USUÁRIOS</a>
                     @endif
                 </div>
             </div>
+
+            @if(Auth::check())
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/auth">GERENCIADOR DE EQUIPAMENTOS</a>
+            @else
             <a style="font-size:1.4rem;" class="navbar-brand" href="/">GERENCIADOR DE EQUIPAMENTOS</a>
+            @endif
 
             @if(Auth::check())
             <x-dropdown align="right" width="48">

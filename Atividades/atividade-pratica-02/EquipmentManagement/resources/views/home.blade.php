@@ -13,7 +13,7 @@
 <div class="d-flex flex-row justify-content-center">
   <div class="p-3" > <a href="{{ route('equipamentos.index') }}" class="btn btn-dark">Relatório de equipamentos</a> </div>
   <div class="p-3" > <a href="{{ route('manutencoes.index') }}" class="btn btn-dark">Relatório de manutenções</a> </div>
-  <div class="p-3" > <a href="/users/index" class="btn btn-dark">Área administrativa</a> </div>
+  <div class="p-3" > <a href="/auth" class="btn btn-dark">Área administrativa</a> </div>
 </div>
 
 @endsection

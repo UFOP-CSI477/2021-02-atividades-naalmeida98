@@ -36,22 +36,22 @@ Route::get('/manutencoes/create_form', function () {
     return view('manutencoes.create_form', ['equipamentos' => $equipamentos]);
 })->middleware(['auth']);
 
-// Route::get('/manutencoes/index2', function () {
-//     $manutencoes = Registro::orderBy('datalimite')->paginate(20);
-//     foreach($manutencoes as $m){
-//         $user = User::where('id', $m->user_id)->get();
-//         $equipamento = Equipamento::where('id', $m->equipamento_id)->get();
-
-//         $m->user_nome = $user['name'];
-//         $m->equipamento_nome = $equipamento['nome'];
-//     }
-
-//     return view('manutencoes.index', ['manutencoes' => $manutencoes]);
-// })->middleware(['auth']);
-
-Route::get('/app', function () {
-    return view('app');
+Route::get('/auth', function () {
+    return view('adm');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/rel_equip', function () {
+    $equipamentos = Equipamento::get();
+    return view('manutencoes.rel_equip', ['equipamentos' => $equipamentos, 'manutencoes' => '']);
+})->middleware(['auth']);
+
+Route::get('/rel_equip/{equipamento}', function ($equipamento) {
+    $manutencoes = Registro::where(['equipamento_id' => $equipamento])->get();
+    $equipamentos = Equipamento::get();
+    return view('manutencoes.rel_equip', ['equipamentos' => $equipamentos, 'manutencoes' => $manutencoes]);
+})->middleware(['auth']);
+
+
 
 require __DIR__.'/auth.php';
 
