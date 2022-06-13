@@ -8,12 +8,58 @@
 
 ### Resumo
 
-  Este trabalho teve como objetivo principal desenvolver um e-commerce de semijoias para a disciplina de Sistemas Web I, no curso de Sistemas de Informação da Faculdade Federal de Ouro Preto (UFOP). 
+  Este trabalho teve como objetivo principal desenvolver um e-commerce de semijoias para a disciplina de Sistemas Web I, no curso de Sistemas de Informação da Faculdade Federal de Ouro Preto (UFOP). O sistema foi desenvolvido utilizando o padrão MVC através do framework Laravel, portanto, as principais linguagens utilizadas foram html, css, javascript e php.
 
 ### 1. Funcionalidades implementadas
 <!-- Descrever as funcionalidades que eram previstas e foram implementas. -->
 
-No sistema em questão foram implementadas as principais telas de uma loja virtual, sendo elas a página home, as páginas dos produtos por categorias, páginas de especificação dos produtos, carrinho de compras e checkout. 
+No sistema em questão foram implementadas as principais telas de uma loja virtual, sendo elas a página home, as páginas dos produtos por categorias, páginas de especificação dos produtos, carrinho de compras e checkout. Confira-as a seguir.
+
+  #### 1.1 Home
+
+
+  ![Screenshot](home_app.PNG)
+
+
+  #### 1.2 Menu
+
+
+  ![Screenshot](menu_app.PNG)
+
+
+  #### 1.3 Carrinho de compras 
+
+
+  ![Screenshot](carrinho_app.PNG)
+
+
+  #### 1.4 Produtos
+
+
+  ![Screenshot](produtos_app.PNG)
+
+
+
+  #### 1.5 Produto
+
+
+  ![Screenshot](produto_app.PNG)
+
+
+
+  #### 1.6 Finalizar compra
+
+
+  ![Screenshot](finalizar_app.PNG)
+
+
+
+  #### 1.7 Compra finalizada
+
+
+  ![Screenshot](finalizado_app.PNG)
+
+  
 
 Destaca-se, a seguir, os seguintes requisitos funcionais que foram cobertos:
 
