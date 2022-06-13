@@ -9,7 +9,7 @@
         </div>
     </a>
 
-    <a href="" style="color:white;" >
+    <a href="{{ route('login') }}" style="color:white;" >
         <div style="background-color:#636257; height:80px; width:100%;"  >
             <p class="d-flex flex-row justify-content-center p-3" style="font-size: 25px;">ÁREA ADMINSTRATIVA</p>
         </div>
