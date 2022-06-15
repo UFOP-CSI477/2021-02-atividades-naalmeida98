@@ -15,7 +15,8 @@ class ColetaController extends Controller
      */
     public function index()
     {
-        //
+        $coletas = Coleta::get();
+        return view('coletas.index', ['coletas' => $coletas]);
     }
 
     /**
@@ -25,7 +26,7 @@ class ColetaController extends Controller
      */
     public function create()
     {
-        //
+        return view('coletas.create');
     }
 
     /**

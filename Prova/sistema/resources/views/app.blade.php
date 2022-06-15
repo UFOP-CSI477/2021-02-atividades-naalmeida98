@@ -79,14 +79,14 @@
                 </div>
                 <hr>
                 <div class="offcanvas-body">
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >GERAL</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="/geral" >GERAL</a>
                     @if(!Auth::check())
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >ADMINISTRATIVO</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('login') }}" >ADMINISTRATIVO</a>
                     @endif
                     @if(Auth::check())
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >ITENS</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >ENTIDADES</a>
-                    <a type="button" class="btn text-white btn-lg btn-block w-100" >COLETAS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('itens.index') }}">ITENS</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('entidades.index') }}">ENTIDADES</a>
+                    <a type="button" class="btn text-white btn-lg btn-block w-100" href="{{ route('coletas.index') }}" >COLETAS</a>
                     @endif
                 </div>
             </div>

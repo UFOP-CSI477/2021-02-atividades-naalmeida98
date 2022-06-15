@@ -15,7 +15,8 @@ class EntidadeController extends Controller
      */
     public function index()
     {
-        //
+        $entidades = Entidade::orderBy('nome')->paginate(20);
+        return view('entidades.index', ['entidades' => $entidades]);
     }
 
     /**
@@ -25,7 +26,7 @@ class EntidadeController extends Controller
      */
     public function create()
     {
-        //
+        return view('entidades.create');
     }
 
     /**

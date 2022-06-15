@@ -7,7 +7,7 @@
     <h2>Lista de Itens</h2>
 
     @if(Auth::check())
-    <a class="btn btn-primary p-3 m-3 w-30" style="background-color: #63625F; border-color:#63625F;" href="{{ route('items.create') }}">Cadastrar</a>
+    <a class="btn btn-primary p-3 m-3 w-30" style="background-color: #63625F; border-color:#63625F;" href="{{ route('itens.create') }}">Cadastrar</a>
     @endif
 
     <table class="table table-stripped table-hover">

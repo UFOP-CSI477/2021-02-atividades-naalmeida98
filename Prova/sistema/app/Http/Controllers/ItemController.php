@@ -15,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $itens = Item::orderBy('descricao')->paginate(20);
+        return view('itens.index', ['itens' => $itens]);
     }
 
     /**
@@ -25,7 +26,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('itens.create');
     }
 
     /**
