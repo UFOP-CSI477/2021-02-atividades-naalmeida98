@@ -90,7 +90,7 @@
                     @endif
                 </div>
             </div>
-            <a style="font-size:1.4rem;" class="navbar-brand" href="/">Sistema de Controle de Doação de Alimentos e Agasalhos</a>
+            <a style="font-size:1.4rem;" class="navbar-brand" href="/">Doação de Alimentos e Agasalhos</a>
 
             @if(Auth::check())
             <x-dropdown align="right" width="48">
