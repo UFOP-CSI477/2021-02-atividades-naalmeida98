@@ -32,17 +32,18 @@
             <tr>
                 <td>{{ $c->id }}</td>
                 <td>{{ $c->item->descricao }}</td>
-                <td>{{ $c->coleta->nome }}</td>
+                <td> {{ $c->entidade->nome }} </td>
                 <td>{{ $c->quantidade }}</td>
                 <td>{{ $c->data }}</td>
                 @if(Auth::check())
                 <td>
-                    <div class="row g-2">
-                        <div class="col-sm-2">
-                            <a href="{{ route('coletas.edit', $e->id) }}" class="btn btn-primary">Editar</a>
+
+                    <div class="d-flex flex-row g-2">
+                    <div class="p-2">
+                            <a href="{{ route('coletas.edit', $c->id) }}" class="btn btn-primary">Editar</a>
                         </div>
-                        <div class="col-sm-2">
-                            <form action="{{ route('coletas.destroy', $e->id) }}" method="post">
+                        <div class="p-2">
+                            <form action="{{ route('coletas.destroy', $c->id) }}" method="post">
 
                                 @csrf
                                 @method('DELETE')

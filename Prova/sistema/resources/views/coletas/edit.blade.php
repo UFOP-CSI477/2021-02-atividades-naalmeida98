@@ -6,9 +6,10 @@
     <main>
         <div class="col-md-7 col-lg-12 my-5">
             <h4 class="mb-3" style="color: #696969;">Adicionar novo item</h4>
-            <form action="{{ route('coletas.store') }}" method="POST">
+            <form action="{{ route('coletas.update', $coleta->id) }}" method="POST">
 
                 @csrf
+                @method('PUT')
 
                 <div class="row g-3">
 
@@ -23,7 +24,7 @@
                     </div>
                     <div class="col-sm-6">
                         <label for="entidade_id" class="form-label">Entidade</label>
-                        <select class="form-select" id="entidade_id" name="entidade_id">
+                        <select class="form-select" id="entidade_id" name="entidade_id" >
                             <option value="select">Selecione</option>
                             @foreach($entidades as $e)
                             <option value="{{ $e->id }}">{{ $e->nome }}</option>
@@ -33,19 +34,19 @@
 
                     <div class="col-sm-">
                         <label for="quantidade" class="form-label">Quantidade</label>
-                        <input type="text" class="form-control" id="quantidade" name="quantidade" placeholder="" value="" required="">
+                        <input type="text" value="{{ $coleta->quantidade }}" class="form-control" id="quantidade" name="quantidade" placeholder="" value="" required="">
                     </div>
 
                     <div class="col-sm-">
                         <label for="data" class="form-label">Data</label>
-                        <input type="text" class="form-control" id="data" name="data" placeholder="" value="" required="">
+                        <input type="text" value="{{ $coleta->data }}" class="form-control" id="data" name="data" placeholder="" value="" required="">
                     </div>
 
                 </div>
 
                 <hr class="my-4">
 
-                <button class="w-100 btn btn-primary btn-lg" type="submit" style="background-color: #636257;  border-color: #636257;">Cadastrar</button>
+                <button class="w-100 btn btn-primary btn-lg" type="submit" style="background-color: #636257;  border-color: #636257;">Editar</button>
             </form>
         </div>
 </div>

@@ -12,10 +12,10 @@ class Coleta extends Model
     protected $fillable = ['item_id', 'entidade_id', 'quantidade', 'data'];
 
     public function item() {
-        return $this->hasMany(Item::class);
+        return $this->belongsTo(Item::class);
     }
 
     public function entidade() {
-        return $this->hasMany(Entidade::class);
+        return $this->belongsTo(Entidade::class);
     }
 }

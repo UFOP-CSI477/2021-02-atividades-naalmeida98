@@ -19,6 +19,7 @@
                 <th>Bairro</th>
                 <th>Cidade</th>
                 <th>Estado</th>
+                <th>Excluir</th>
             </tr>
         </thead>
 
@@ -32,7 +33,25 @@
                 <td>{{ $e->bairro }}</td>
                 <td>{{ $e->cidade }}</td>
                 <td>{{ $e->estado }}</td>
+                @if(Auth::check())
+                <td>
+                    <div class="d-flex flex-row">
+                        <div>
+                            <form action="{{ route('entidades.destroy', $e->id) }}" method="post">
+
+                                @csrf
+                                @method('DELETE')
+
+                                <input type="submit" value="Excluir" class="btn btn-danger">
+
+                            </form>
+                        </div>
+
+                    </div>
+                </td>
+                @endif
             </tr>
+
 
             @endforeach
 

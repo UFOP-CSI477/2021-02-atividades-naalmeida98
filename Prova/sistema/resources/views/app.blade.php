@@ -123,6 +123,36 @@
         </div>
     </nav>
 
+    <!-- Mensagem -->
+    @if(session('mensagem'))
+    <div class="container p-2">
+        <div class="alert alert-success">
+            {{ session('mensagem') }}
+        </div>
+    </div>
+    @endif
+
+    @if(session('mensagem-erro'))
+    <div class="container p-2">
+        <div class="alert alert-danger">
+            {{ session('mensagem-erro') }}
+        </div>
+    </div>
+    @endif
+
+    <!-- Erros -->
+    <div class="container p-2">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
+
 
     <!-- CONTEUDO A SER MODIFICADO -->
     <div id='content '>

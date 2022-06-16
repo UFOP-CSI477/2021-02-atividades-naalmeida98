@@ -37,7 +37,9 @@ class EntidadeController extends Controller
      */
     public function store(StoreEntidadeRequest $request)
     {
-        //
+        Entidade::create($request->all());
+        session()->flash('mensagem', 'Cadastrado com sucesso!');
+        return redirect()->route('entidades.index');
     }
 
     /**
@@ -82,6 +84,17 @@ class EntidadeController extends Controller
      */
     public function destroy(Entidade $entidade)
     {
-        //
+        if ($entidade->coletas->count() > 0) {
+            session()->flash('mensagem-erro', 'Exclusão não permitida! Existem coletas associadas.');
+            return back()->withInput();
+        }
+
+        if($entidade->delete()) {
+            session()->flash('mensagem', 'Excluído com sucesso!');
+            return redirect()->route('entidades.index');
+        } else {
+            session()->flash('mensagem-erro', 'Erro na exclusão!');
+            return back();
+        }
     }
 }

@@ -11,8 +11,8 @@ class Item extends Model
 
     protected $fillable = ['descricao'];
 
-    public function coleta() {
-        return $this->belongsTo(Coleta::class);
+    public function coletas() {
+        return $this->hasMany(Coleta::class);
     }
 }
 

@@ -11,7 +11,7 @@ class Entidade extends Model
 
     protected $fillable = ['nome', 'bairro', 'cidade', 'estado'];
 
-    public function coleta() {
-        return $this->belongsTo(Coleta::class);
+    public function coletas() {
+        return $this->hasMany(Coleta::class);
     }
 }

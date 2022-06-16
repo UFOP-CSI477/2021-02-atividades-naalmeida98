@@ -37,7 +37,9 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
-        //
+        Item::create($request->all());
+        session()->flash('mensagem', 'Cadastrado com sucesso!');
+        return redirect()->route('itens.index');
     }
 
     /**
