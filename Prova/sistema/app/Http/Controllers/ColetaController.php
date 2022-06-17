@@ -7,6 +7,7 @@ use App\Http\Requests\StoreColetaRequest;
 use App\Http\Requests\UpdateColetaRequest;
 use App\Models\Entidade;
 use App\Models\Item;
+use Exception;
 
 class ColetaController extends Controller
 {
@@ -17,7 +18,11 @@ class ColetaController extends Controller
      */
     public function index()
     {
+        try{
         $coletas = Coleta::get();
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return view('coletas.index', ['coletas' => $coletas]);
     }
 
@@ -28,8 +33,12 @@ class ColetaController extends Controller
      */
     public function create()
     {
+        try{
         $itens = Item::get();
         $entidades = Entidade::get();
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return view('coletas.create',['itens' => $itens,'entidades' => $entidades]);
     }
 
@@ -41,8 +50,12 @@ class ColetaController extends Controller
      */
     public function store(StoreColetaRequest $request)
     {
+        try{
         Coleta::create($request->all());
         session()->flash('mensagem', 'Cadastrado com sucesso!');
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return redirect()->route('coletas.index');
     }
 
@@ -65,8 +78,12 @@ class ColetaController extends Controller
      */
     public function edit(Coleta $coleta)
     {
+        try{
         $itens = Item::get();
         $entidades = Entidade::get();
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return view('coletas.edit',['itens' => $itens,'entidades' => $entidades, 'coleta' => $coleta]);
     }
 

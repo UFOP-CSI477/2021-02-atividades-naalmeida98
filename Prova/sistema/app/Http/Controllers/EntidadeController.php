@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Entidade;
 use App\Http\Requests\StoreEntidadeRequest;
 use App\Http\Requests\UpdateEntidadeRequest;
+use Exception;
+use PhpParser\Node\Stmt\TryCatch;
 
 class EntidadeController extends Controller
 {
@@ -15,7 +17,11 @@ class EntidadeController extends Controller
      */
     public function index()
     {
+        try{
         $entidades = Entidade::orderBy('nome')->paginate(20);
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return view('entidades.index', ['entidades' => $entidades]);
     }
 
@@ -37,8 +43,12 @@ class EntidadeController extends Controller
      */
     public function store(StoreEntidadeRequest $request)
     {
-        Entidade::create($request->all());
-        session()->flash('mensagem', 'Cadastrado com sucesso!');
+        try{
+            Entidade::create($request->all());
+            session()->flash('mensagem', 'Cadastrado com sucesso!');
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return redirect()->route('entidades.index');
     }
 

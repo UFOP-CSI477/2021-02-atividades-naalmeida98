@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Item;
 use App\Http\Requests\StoreItemRequest;
 use App\Http\Requests\UpdateItemRequest;
+use Exception;
 
 class ItemController extends Controller
 {
@@ -37,8 +38,12 @@ class ItemController extends Controller
      */
     public function store(StoreItemRequest $request)
     {
+        try{
         Item::create($request->all());
         session()->flash('mensagem', 'Cadastrado com sucesso!');
+        }catch(Exception $error){
+            session()->flash('mensagem-erro', 'Erro!!!');
+        }
         return redirect()->route('itens.index');
     }
 
